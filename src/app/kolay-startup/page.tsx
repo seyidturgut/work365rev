@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -33,6 +34,7 @@ export default function KolayStartupPage() {
   return (
     <>
       <Header />
+      <Breadcrumb items={[{ label: "KolayStartup", href: "/kolay-startup" }]} />
       <main className="bg-white">
         {/* Hero */}
         <section className="pt-40 pb-20 px-6 max-w-[1230px] mx-auto">

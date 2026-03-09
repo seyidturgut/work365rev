@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Breadcrumb from "@/components/Breadcrumb";
 
 /* ─── DATA ─── */
 
@@ -194,6 +195,7 @@ export default function DigitalInfrastructurePage() {
   return (
     <main className="bg-[#FAFBFC] pt-[92px]">
       <Header />
+      <Breadcrumb items={[{ label: "Dijital Altyapı", href: "/digital-altyapi" }]} />
 
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden px-6 pb-10 pt-14">
@@ -209,7 +211,7 @@ export default function DigitalInfrastructurePage() {
                   Dijital Altyapı
                 </div>
 
-                <h1 className="mt-7 text-[38px] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#0F172A] md:text-[58px]">
+                <h1 className="mt-7 text-[30px] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#0F172A] md:text-[50px]">
                   Şirketinizin dijital kimliğini tek adımda oluşturun.
                 </h1>
 

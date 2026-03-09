@@ -1,28 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { BLOG_POSTS } from "@/lib/blog-data";
 
 export default function Blog() {
-  const posts = [
-    {
-      title: "ABD'de Ticari Banka Hesabı Nasıl Açılır?",
-      description: "İşletme banka hesabı açmak şarttır. Bu kılavuzla (uluslararası girişimcileri de kapsayan) bunu nasıl yapacağınızı keşfedin.",
-      image: "/blog_bank.png",
-      link: "#"
-    },
-    {
-      title: "E-Ticaret Muhasebesi 101: 2026 Yılında İşletme Sahipleri İçin En İyi Kılavuz",
-      description: "E-ticaret, trilyon dolarlık küresel bir sektör haline geldi. 2026 yılına kadar: Elbette, çevrimiçi alışverişin kolaylığı ve dijital mağazaların sınırsız erişimi...",
-      image: "/blog_ecommerce.png",
-      link: "#"
-    },
-    {
-      title: "Kârınızı En Üst Düzeye Çıkarın: Vergilerde 30.000 Dolar Tasarruf Edin",
-      description: "Eğer e-ticaret alanında faaliyet göstermeyi hedefleyen bir satıcıysanız, altı hatta yedi haneli rakamlara ulaşmak hayal gibi görünebilir. Ta ki bunu...",
-      image: "/blog_tax.png",
-      link: "#"
-    }
-  ];
+  const posts = BLOG_POSTS.slice(0, 3);
 
   return (
     <section className="py-24 px-6 bg-white">
@@ -44,7 +27,7 @@ export default function Blog() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {posts.map((post, index) => (
             <motion.div
-              key={index}
+              key={post.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -53,9 +36,9 @@ export default function Blog() {
             >
               {/* Image Container */}
               <div className="w-full h-[240px] rounded-[24px] overflow-hidden mb-8">
-                <img 
-                  src={post.image} 
-                  alt={post.title} 
+                <img
+                  src={post.imageUrl}
+                  alt={post.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
@@ -66,16 +49,28 @@ export default function Blog() {
                   {post.title}
                 </h3>
                 <p className="text-Work365-text mb-8 line-clamp-3 text-lg leading-relaxed">
-                  {post.description}
+                  {post.excerpt}
                 </p>
                 <div className="mt-auto">
-                  <button className="bg-[#E9ECEF] text-Work365-text px-6 py-3 rounded-full font-bold text-sm hover:bg-[#DEE2E6] transition-colors">
-                    Daha fazla bilgi edin
-                  </button>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="inline-block bg-[#E9ECEF] text-Work365-text px-6 py-3 rounded-full font-bold text-sm hover:bg-[#DEE2E6] transition-colors"
+                  >
+                    Devamını Oku
+                  </Link>
                 </div>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-8 py-3.5 text-[14px] font-bold text-[#0F172A] transition-all hover:border-black/20 hover:shadow-md"
+          >
+            Tüm Yazıları Gör
+          </Link>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
 import { ArrowRight, Check, CheckCircle2, CircleHelp, ShieldCheck, Sparkles, WalletCards, X } from "lucide-react";
 
@@ -95,9 +96,10 @@ const comparisonFaqs = [
 
 export default function ComparisonPage() {
   return (
-    <main className="bg-white">
+    <main className="bg-white pt-[92px]">
       <Header />
-      <section className="px-6 pb-16 pt-32">
+      <Breadcrumb items={[{ label: "Planları Karşılaştır", href: "/karsilastir" }]} />
+      <section className="px-6 pb-16 pt-10">
         <div className="mx-auto max-w-[1230px]">
           <div className="grid gap-8 lg:grid-cols-[1.08fr_0.92fr]">
             <div className="rounded-[40px] bg-[#FFF4D0] px-7 py-8 md:px-10 md:py-10">

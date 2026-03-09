@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Breadcrumb from "@/components/Breadcrumb";
 import type { CompanyTypeConfig } from "@/app/sirket-kur/company-types";
 import { FaqAccordion } from "@/components/FaqAccordion";
 
@@ -74,6 +75,7 @@ export default function CompanyTypeStoryPage({ config }: CompanyTypeStoryPagePro
   return (
     <main className="bg-[#FAFBFC] pt-[92px]">
       <Header />
+      <Breadcrumb items={[{ label: "Şirket Kur" }, { label: config.name }]} />
 
       {/* ─── HERO ─── */}
       <section className="relative overflow-hidden px-6 pb-10 pt-12">
@@ -105,7 +107,7 @@ export default function CompanyTypeStoryPage({ config }: CompanyTypeStoryPagePro
                   {config.name}
                 </div>
 
-                <h1 className="mt-7 text-[38px] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#0F172A] md:text-[60px]">
+                <h1 className="mt-7 text-[30px] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#0F172A] md:text-[50px]">
                   {config.heroTitle}
                 </h1>
 

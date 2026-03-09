@@ -48,9 +48,9 @@ export default function WhyWork365() {
               <p className="text-lg text-white/90 font-bold mb-6 leading-tight">
                 Hayallerinizi kurun. Gerisini biz hallederiz.
               </p>
-              <button className="bg-black text-white px-7 py-3.5 rounded-full font-bold text-sm flex items-center gap-2 hover:bg-gray-900 transition-colors shadow-lg">
+              <Link href="/fiyatlandirma" className="bg-black text-white px-7 py-3.5 rounded-full font-bold text-sm flex items-center gap-2 hover:bg-gray-900 transition-colors shadow-lg w-fit">
                 Paketleri İncele <ChevronRight className="w-4 h-4" />
-              </button>
+              </Link>
             </div>
           </motion.div>
 

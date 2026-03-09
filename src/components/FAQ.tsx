@@ -6,20 +6,24 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "Work365 ile çalışmak için ABD vatandaşı olmam gerekiyor mu?",
-    answer: "Hayır. Dünya çapındaki girişimcilerin ABD şirketlerini kurmalarına ve büyütmelerine yardımcı oluyoruz. ABD vatandaşı olmadan da LLC kurabilirsiniz."
+    question: "Work365 ile şirket kuruluşu ne kadar sürer?",
+    answer: "Şahıs şirketi kuruluşu ortalama 2–3 iş günü, Limited veya Anonim şirket tescili ise 5–7 iş günü içinde tamamlanmaktadır. Tüm süreç tamamen dijital olarak yürütülür; noter, evrak kuyruğu veya kurum kurum dolaşmak gerekmez."
   },
   {
-    question: "Başlamak için sizden hangi bilgilere ihtiyacımız var?",
-    answer: "Sadece şirket adınız, adresiniz (biz sağlayabiliriz) ve pasaport kopyanız ile adres kanıtınız gibi temel kimlik bilgileri yeterlidir."
+    question: "Şirket kurulumunda hangi belgelere ihtiyacım var?",
+    answer: "Kimlik fotokopisi (T.C. kimlik kartı veya pasaport) ve ikametgah belgesi yeterlidir. Ortaklı şirketlerde tüm ortakların kimlik bilgileri gerekir. Belgelerin listesi ve doğru formatları size başvuru aşamasında adım adım gösterilir."
   },
   {
-    question: "Work365 Analytics kimler içindir?",
-    answer: "Finansal verilerini net bir şekilde görmek, geliri, gideri ve reklam harcamalarını tek panelde analiz etmek isteyen tüm işletme sahipleri içindir."
+    question: "e-Fatura, e-Arşiv ve e-Dönüşüm geçişini Work365 üzerinden yapabilir miyim?",
+    answer: "Evet. GİB uyumlu e-Fatura, e-Arşiv Fatura, e-İrsaliye ve e-Defter entegrasyonları Dijital Altyapı paketimiz kapsamındadır. Muhasebecin veya mevcut ERP sistemin ile entegrasyon desteği de sağlanır."
   },
   {
-    question: "Hala bir sorunuz mu var?",
-    answer: "Bize her zaman hello@Work365.com adresinden veya sağ alt köşedeki canlı destek simgesinden ulaşabilirsiniz. Uzman ekibimiz sorularınızı yanıtlamaktan memnuniyet duyar."
+    question: "Başlangıç paketine hangi hizmetler dahil?",
+    answer: "Başlangıç paketi; şirket kuruluşu (tescil ve vergi levhası), e-İmza (1 yıl), KEP adresi (1 yıl) ve sanal ofis hizmetini kapsar. Ek olarak Dijital Altyapı (e-Dönüşüm, M365) ve Ekosistem modülleri isteğe bağlı olarak pakete eklenebilir."
+  },
+  {
+    question: "Sonradan paket veya modül yükseltmesi yapabilir miyim?",
+    answer: "Evet, dilediğin zaman mevcut paketine yeni modüller ekleyebilir veya üst pakete geçiş yapabilirsin. Yükseltme işlemleri Work365 müşteri paneli üzerinden birkaç tıkla gerçekleştirilir; ek kurulum veya sözleşme süreci gerekmez."
   }
 ];
 
@@ -35,7 +39,7 @@ export default function FAQ() {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +58,7 @@ export default function FAQ() {
                   <Plus className="w-5 h-5 text-Work365-text shrink-0 ml-4" />
                 )}
               </button>
-              
+
               {openIndex === index && (
                 <div className="p-6 pt-0 bg-gray-50 text-Work365-text leading-relaxed border-t border-gray-100">
                   <p className="mt-4">{faq.answer}</p>

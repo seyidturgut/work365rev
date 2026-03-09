@@ -32,7 +32,7 @@ const features: Feature[] = [
     label: "Şirket Kuruluşu",
     title: "Şirketinizi hızlı, kolay ve doğru adımlarla kurun.",
     cta: "Kuruluş Sürecini Başlatın",
-    href: "/register",
+    href: "/fiyatlandirma",
     icon: <Rocket className="w-4 h-4 text-[#A88208]" />,
     bgColor: "bg-[#F6EDC8]",
     textColor: "text-[#A88208]",
@@ -43,6 +43,7 @@ const features: Feature[] = [
     label: "Muhasebe",
     title: "Finansal işlemlerinizi tek panelden izleyin ve yönetin.",
     cta: "Muhasebe Görünümünü İnceleyin",
+    href: "/ekosistem",
     icon: <BookOpen className="w-4 h-4 text-[#2F73FF]" />,
     bgColor: "bg-[#E7ECF8]",
     textColor: "text-[#2F73FF]",
@@ -53,6 +54,7 @@ const features: Feature[] = [
     label: "Vergiler",
     title: "Vergi süreçlerinizi tek panelden takip edin.",
     cta: "Vergi Süreçlerini Görün",
+    href: "/digital-altyapi",
     icon: <Percent className="w-4 h-4 text-[#00A86B]" />,
     bgColor: "bg-[#CFEED6]",
     textColor: "text-[#00A86B]",
@@ -63,6 +65,7 @@ const features: Feature[] = [
     label: "Dijital Altyapı Ürünleri",
     title: "e-İmza ve KEP süreçlerini tek yerden yönetin.",
     cta: "Dijital Altyapıyı İnceleyin",
+    href: "/digital-altyapi",
     icon: <KeyRound className="w-4 h-4 text-[#0F766E]" />,
     bgColor: "bg-[#E9F8F6]",
     textColor: "text-[#0F766E]",
@@ -73,6 +76,7 @@ const features: Feature[] = [
     label: "Analiz",
     title: "Daha Akıllı İş Kararları İçin Güçlü Analizler.",
     cta: "Satışlarınızı Analiz Edin",
+    href: "/ekosistem",
     icon: <BarChart3 className="w-4 h-4 text-[#D84C6F]" />,
     bgColor: "bg-[#FFF2F5]",
     textColor: "text-[#D84C6F]",
@@ -118,10 +122,10 @@ export default function Features() {
 
           <div className="flex w-full flex-col gap-3 sm:w-auto">
             <Link
-              href="/register"
+              href="/fiyatlandirma"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-8 py-4 text-[16px] font-bold text-white"
             >
-              Hesap Oluşturun <ChevronRight className="h-5 w-5" />
+              Paketleri İncele <ChevronRight className="h-5 w-5" />
             </Link>
           </div>
         </div>

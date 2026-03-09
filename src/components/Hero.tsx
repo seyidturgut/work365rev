@@ -136,8 +136,8 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
-            <Link 
-              href="/start" 
+            <Link
+              href="/fiyatlandirma"
               className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-full text-[15px] font-bold transition-colors flex items-center justify-center gap-2"
             >
               Hemen Şirketini Kur <ChevronRight className="w-5 h-5" strokeWidth={3} />
@@ -370,7 +370,13 @@ function CompanyAdvisorModal({
 
                   <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                     <Link
-                      href="/register"
+                      href={
+                        result?.companyType === "Şahıs Şirketi"
+                          ? "/sirket-kur/sahis-sirketi"
+                          : result?.companyType === "Anonim Şirket"
+                          ? "/sirket-kur/anonim-sirketi"
+                          : "/sirket-kur/limited-sirketi"
+                      }
                       className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-6 py-3.5 text-[15px] font-bold text-white"
                     >
                       Bu Yapıyla Devam Et <ChevronRight className="h-4 w-4" />

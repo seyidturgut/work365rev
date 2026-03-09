@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
 import type { CompanyTypeConfig } from "@/app/sirket-kur/company-types";
@@ -14,6 +15,7 @@ export default function CompanyTypePageTemplate({ config }: CompanyTypePageTempl
   return (
     <main className="bg-white pt-[92px]">
       <Header />
+      <Breadcrumb items={[{ label: "Şirket Kur" }, { label: config.name }]} />
 
       <section className="px-6 pb-10 pt-10">
         <div className="mx-auto max-w-[1230px]">
@@ -24,7 +26,7 @@ export default function CompanyTypePageTemplate({ config }: CompanyTypePageTempl
                 {config.name}
               </div>
 
-              <h1 className="mt-6 max-w-[760px] text-[38px] font-bold leading-[1.02] tracking-[-0.05em] text-black md:text-[60px]">
+              <h1 className="mt-6 max-w-[760px] text-[30px] font-bold leading-[1.02] tracking-[-0.05em] text-black md:text-[50px]">
                 {config.heroTitle}
               </h1>
               <p className="mt-6 max-w-[720px] text-[18px] leading-8 text-black/72">{config.heroBody}</p>

@@ -2,6 +2,7 @@
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight, Check, CheckCircle2, ShieldCheck, Sparkles, X } from "lucide-react";
@@ -177,6 +178,7 @@ export default function PricingPage() {
   return (
     <main className="bg-white pt-[92px]">
       <Header />
+      <Breadcrumb items={[{ label: "Fiyatlandırma", href: "/fiyatlandirma" }]} />
 
       <section className="mt-4 bg-[#E9EEF6] px-6 py-0">
         <div className="mx-auto max-w-[1230px]">
@@ -217,7 +219,7 @@ export default function PricingPage() {
               <Sparkles className="h-4 w-4" />
               Fiyatlandırma
             </span>
-            <h1 className="mt-6 text-[38px] font-bold leading-[1.02] tracking-[-0.05em] text-black md:text-[64px]">
+            <h1 className="mt-6 text-[30px] font-bold leading-[1.02] tracking-[-0.05em] text-black md:text-[50px]">
               Yüksek danışmanlık ücretleri yerine daha net ve görünür başlangıç paketleri.
             </h1>
             <p className="mx-auto mt-6 max-w-[760px] text-[18px] leading-8 text-black/70">
