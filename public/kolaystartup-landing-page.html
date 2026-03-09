@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KolayStartup | Startup Ekosistemini Anlatan Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #11182d;
+      --card: rgba(255,255,255,0.06);
+      --card-border: rgba(255,255,255,0.10);
+      --text: #eff4ff;
+      --muted: #b6c2e1;
+      --primary: #7c5cff;
+      --secondary: #22c1c3;
+      --accent: #7cf29a;
+      --warning: #ffd166;
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124,92,255,.28), transparent 30%),
+        radial-gradient(circle at top right, rgba(34,193,195,.18), transparent 24%),
+        linear-gradient(180deg, #09101f 0%, #0c1326 60%, #0b1020 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+    .section { padding: 88px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(124,92,255,.12);
+      border: 1px solid rgba(124,92,255,.25);
+      color: #dcd4ff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(8, 13, 26, .65);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      min-height: 78px;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -.03em;
+    }
+    .logo span {
+      color: var(--secondary);
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: .25s ease;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #5be7ff);
+      color: white;
+      box-shadow: 0 16px 34px rgba(92, 110, 255, .25);
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary {
+      background: rgba(255,255,255,.05);
+      border-color: rgba(255,255,255,.10);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 72px 0 40px;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 30px;
+      align-items: center;
+    }
+    h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: .98;
+      letter-spacing: -.05em;
+      margin: 18px 0 20px;
+    }
+    .lead {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 760px;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+    .stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+    }
+    .stat strong {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+    .stat span { color: var(--muted); font-size: 14px; }
+
+    .hero-panel {
+      position: relative;
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+    .panel-card {
+      background: rgba(8, 14, 30, .78);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 14px;
+    }
+    .panel-title { font-size: 14px; color: #d7e0ff; opacity: .9; margin-bottom: 12px; }
+    .mini-list { display: grid; gap: 12px; }
+    .mini-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+    }
+    .mini-item b { color: var(--text); display: block; margin-bottom: 2px; }
+    .tag {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(124, 242, 154, .12);
+      color: #caffd7;
+      font-size: 12px;
+      font-weight: 700;
+      border: 1px solid rgba(124, 242, 154, .22);
+      white-space: nowrap;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      margin: 16px 0 14px;
+    }
+    .section-subtitle {
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .cards-3, .cards-4 {
+      display: grid;
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .cards-3 { grid-template-columns: repeat(3, 1fr); }
+    .cards-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .card {
+      padding: 24px;
+      border-radius: 22px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+    .card h3 {
+      margin: 12px 0 10px;
+      font-size: 22px;
+      letter-spacing: -.03em;
+    }
+    .card p { color: var(--muted); margin: 0; }
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(124,92,255,.22), rgba(34,193,195,.18));
+      border: 1px solid rgba(255,255,255,.10);
+      font-size: 22px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 34px;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      margin-bottom: 14px;
+    }
+    .step-number {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+    }
+    .step h4 { margin: 0 0 6px; font-size: 18px; }
+    .step p { margin: 0; color: var(--muted); }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .price-card {
+      position: relative;
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow);
+    }
+    .price-card.featured {
+      border-color: rgba(124,92,255,.45);
+      transform: translateY(-6px);
+      background: linear-gradient(180deg, rgba(124,92,255,.16), rgba(255,255,255,.04));
+    }
+    .badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255, 209, 102, .16);
+      border: 1px solid rgba(255, 209, 102, .28);
+      color: #ffe4a1;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+    .price-card h3 { margin: 0 0 6px; font-size: 24px; }
+    .price { font-size: 38px; font-weight: 800; letter-spacing: -.04em; margin: 14px 0 10px; }
+    .price small { font-size: 15px; color: var(--muted); }
+    .price-card p, .price-card li { color: var(--muted); }
+    .price-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+    .price-card li::before {
+      content: '✓';
+      margin-right: 10px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .audience {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+    .audience .card { padding-bottom: 30px; }
+
+    .cta {
+      padding: 32px;
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at top right, rgba(92,231,255,.16), transparent 25%),
+        linear-gradient(135deg, rgba(124,92,255,.18), rgba(255,255,255,.05));
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: var(--shadow);
+    }
+    .cta-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+    }
+
+    footer {
+      padding: 26px 0 60px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .footer-box {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid, .split, .cta-row,
+      .cards-3, .cards-4, .pricing-grid, .audience {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-grid { grid-template-columns: 1fr; }
+      .cta-row { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+      .hero-stats,
+      .cards-3, .cards-4, .split, .pricing-grid, .audience {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 42px; }
+      .section { padding: 68px 0; }
+      .hero { padding-top: 46px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">Kolay<span>Startup</span></div>
+      <nav class="nav-links">
+        <a href="#ne-yapiyor">Ne Yapıyor?</a>
+        <a href="#moduller">Modüller</a>
+        <a href="#nasil-calisir">Nasıl Çalışır?</a>
+        <a href="#fiyatlandirma">Fiyatlandırma</a>
+      </nav>
+      <a class="btn btn-secondary" href="#cta">İncele</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Türkiye odaklı startup ekosistemi platformu</span>
+          <h1>KolayStartup tam olarak ne yapıyor?</h1>
+          <p class="lead">
+            KolayStartup; girişimcileri, yatırımcıları ve hizmet sağlayıcıları tek dijital çatı altında buluşturan,
+            startup yolculuğunun erken aşamadan büyümeye kadar olan adımlarını daha erişilebilir hale getirmeyi amaçlayan bir platformdur.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#ne-yapiyor">Hizmeti Keşfet</a>
+            <a class="btn btn-secondary" href="#fiyatlandirma">Planları Gör</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>500+</strong>
+              <span>aktif startup görünürlüğü</span>
+            </div>
+            <div class="stat">
+              <strong>200+</strong>
+              <span>yatırımcı ağına erişim</span>
+            </div>
+            <div class="stat">
+              <strong>₺50M+</strong>
+              <span>başarılı eşleşme vurgusu</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="panel-card">
+            <div class="panel-title">Platformun sunduğu temel akış</div>
+            <div class="mini-list">
+              <div class="mini-item">
+                <div>
+                  <b>Startup profili oluşturma</b>
+                  Girişimlerin yatırımcı ve ortaklara görünür olması
+                </div>
+                <span class="tag">Başlangıç</span>
+              </div>
+              <div class="mini-item">
+                <div>
+                  <b>AI destekli değerlendirme</b>
+                  Başvuruların daha hızlı ve sistematik incelenmesi
+                </div>
+                <span class="tag">AI</span>
+              </div>
+              <div class="mini-item">
+                <div>
+                  <b>Yatırımcı ve ekip eşleştirme</b>
+                  Uygun yatırımcı, kurucu ortak ve takım üyelerine erişim
+                </div>
+                <span class="tag">Eşleştirme</span>
+              </div>
+              <div class="mini-item">
+                <div>
+                  <b>Yan hizmetler ve modüller</b>
+                  KolayJob, KolayTeam ve hizmet sağlayıcı ağı ile genişleme
+                </div>
+                <span class="tag">Ekosistem</span>
+              </div>
+            </div>
+          </div>
+          <div class="panel-card">
+            <div class="panel-title">Kime hitap ediyor?</div>
+            <div class="mini-list">
+              <div class="mini-item"><b>Girişimciler</b><span class="tag">Fon & görünürlük</span></div>
+              <div class="mini-item"><b>Yatırımcılar</b><span class="tag">Deal flow</span></div>
+              <div class="mini-item"><b>Yetenekler</b><span class="tag">İş fırsatı</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ne-yapiyor">
+      <div class="container">
+        <span class="eyebrow">Özet</span>
+        <h2 class="section-title">KolayStartup’ın verdiği hizmet</h2>
+        <p class="section-subtitle">
+          Platform, sadece startup listeleyen bir dizin değil; yatırım, ekip kurma, işe alım ve profesyonel destek süreçlerini aynı deneyim içinde toplayan çok katmanlı bir girişim ekosistemi çözümüdür.
+        </p>
+
+        <div class="cards-3">
+          <article class="card">
+            <div class="icon">🚀</div>
+            <h3>Startup görünürlüğü sağlar</h3>
+            <p>Girişimler kendilerini tanıtabilecek, yatırımcılara ulaşabilecek ve farklı aşamalara göre daha görünür hale gelebilecek bir profile sahip olur.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🤝</div>
+            <h3>Doğru bağlantıları kurar</h3>
+            <p>Yatırımcı, mentor, danışman, kurucu ortak veya takım üyesi gibi kritik paydaşlarla eşleşme mantığı üzerine kuruludur.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🧠</div>
+            <h3>AI ile süreci hızlandırır</h3>
+            <p>Başvuru değerlendirmesi ve eşleştirme süreçlerinde yapay zeka destekli karar akışları kullanarak verimlilik iddiası sunar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="moduller">
+      <div class="container">
+        <span class="eyebrow">Platform modülleri</span>
+        <h2 class="section-title">Tek platform içinde birden fazla çözüm</h2>
+        <p class="section-subtitle">
+          KolayStartup, ana platformun yanında işe alım ve takım kurma gibi özel alt modüllerle girişimlerin ihtiyaç duyduğu operasyonel boşlukları kapatmaya çalışır.
+        </p>
+
+        <div class="cards-4">
+          <article class="card">
+            <div class="icon">💼</div>
+            <h3>Startup kataloğu</h3>
+            <p>Startupların keşfedilmesini, filtrelenmesini ve yatırımcılar tarafından incelenmesini kolaylaştıran listeleme yapısı sunar.</p>
+          </article>
+          <article class="card">
+            <div class="icon">💸</div>
+            <h3>Yatırımcı ağı</h3>
+            <p>Farklı yatırım tipleri ve odak alanlarına göre yatırımcıların görülebildiği, startup-yatırımcı buluşmasını kolaylaştıran bölüm bulunur.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🧑‍💻</div>
+            <h3>KolayJob</h3>
+            <p>Startup odaklı insan kaynakları modülü olarak çalışır; adaylarla açık pozisyonları AI destekli şekilde eşleştirmeyi hedefler.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🧩</div>
+            <h3>KolayTeam</h3>
+            <p>Kurucu ortak ve ekip üyesi bulmayı kolaylaştırır; vizyon, rol ve beceri uyumuna göre bağlantı kurma mantığı sunar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Hedef kitle</span>
+        <h2 class="section-title">Kimler için değer üretiyor?</h2>
+        <p class="section-subtitle">KolayStartup aynı anda üç ana kullanıcı grubuna hitap edecek şekilde kurgulanmış görünüyor.</p>
+
+        <div class="audience">
+          <article class="card">
+            <div class="icon">🌱</div>
+            <h3>Girişimciler için</h3>
+            <p>Yatırımcıya görünür olmak, ekip kurmak, yetenek bulmak, danışman ve hizmet sağlayıcılara erişmek isteyen girişimler için merkezi bir alan sunar.</p>
+          </article>
+          <article class="card">
+            <div class="icon">📈</div>
+            <h3>Yatırımcılar için</h3>
+            <p>Deal flow kalitesini artırmak, girişimleri filtrelemek ve ilgi alanına göre potansiyel fırsatları daha düzenli incelemek isteyen yatırımcıları hedefler.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🎯</div>
+            <h3>Yetenek ve uzmanlar için</h3>
+            <p>Startup dünyasında iş arayan profesyoneller, kurucu ortak olmak isteyen adaylar ve hizmet sağlayıcılar için erişim noktası oluşturur.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="nasil-calisir">
+      <div class="container">
+        <span class="eyebrow">İşleyiş</span>
+        <h2 class="section-title">Platform nasıl çalışıyor?</h2>
+        <p class="section-subtitle">Sitedeki yapı, kullanıcıyı başvurudan eşleşmeye ve oradan büyüme aşamasına kadar yönlendiren basit bir akış sunuyor.</p>
+
+        <div class="split">
+          <div class="card">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div>
+                <h4>Başvuru ve profil oluşturma</h4>
+                <p>Startup, yatırımcı veya hizmet sağlayıcı platforma kayıt olur; profiliyle ekosistemde görünür hale gelir.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <div>
+                <h4>AI destekli inceleme</h4>
+                <p>Sistem, başvuruyu daha hızlı değerlendirmek ve ilk seviyede sınıflandırmak için yapay zeka akışlarından yararlanır.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <div>
+                <h4>Doğru kişilerle eşleşme</h4>
+                <p>Yatırımcı, ekip arkadaşı, aday çalışan veya profesyonel hizmet sağlayıcılarla daha isabetli bağlantılar kurulması amaçlanır.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">4</div>
+              <div>
+                <h4>Büyüme ve ölçekleme</h4>
+                <p>Kullanıcı, ihtiyacına göre modüller ve daha üst planlarla girişiminin bir sonraki aşamasına geçebilir.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="icon">✨</div>
+            <h3>Neden dikkat çekiyor?</h3>
+            <p style="margin-bottom:14px;color:var(--muted)">
+              KolayStartup’ın ana farkı, bir startup’ın sadece yatırım değil; ekip, işe alım, danışmanlık ve görünürlük ihtiyaçlarını tek arayüzde birleştirmeye çalışmasıdır.
+            </p>
+            <div class="mini-list">
+              <div class="mini-item"><div><b>Çoklu kullanıcı tipi</b> startup, yatırımcı ve hizmet sağlayıcıları aynı ekosistemde toplar</div></div>
+              <div class="mini-item"><div><b>Modüler yapı</b> KolayJob ve KolayTeam gibi alt ürünlerle dikey genişleme sunar</div></div>
+              <div class="mini-item"><div><b>Aşama bazlı yaklaşım</b> fikir aşamasından kurumsal büyümeye kadar plan mantığı kurar</div></div>
+              <div class="mini-item"><div><b>Düşük bariyerli başlangıç</b> ücretsiz deneme ve giriş odaklı çağrılarla kullanıcı kazanımını destekler</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fiyatlandirma">
+      <div class="container">
+        <span class="eyebrow">Plan yapısı</span>
+        <h2 class="section-title">Fikir aşamasından kurumsal büyümeye uzanan fiyatlandırma</h2>
+        <p class="section-subtitle">
+          Sitedeki fiyatlandırma mantığı, startup’ın olgunluk seviyesi arttıkça daha fazla görünürlük, erişim ve destek veren katmanlı abonelikler üzerine kurulmuş durumda.
+        </p>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Fikir Aşaması</h3>
+            <p>İlk görünürlük ve temel araçlar</p>
+            <div class="price">₺3.465 <small>/ ay</small></div>
+            <ul>
+              <li>Profil oluşturma</li>
+              <li>AI pitch değerlendirme</li>
+              <li>Temel dashboard erişimi</li>
+              <li>Mentor görünürlüğü</li>
+            </ul>
+          </article>
+
+          <article class="price-card featured">
+            <span class="badge">En Popüler</span>
+            <h3>MVP Geliştirme</h3>
+            <p>Yatırımcı görünürlüğü ve analitik</p>
+            <div class="price">₺6.965 <small>/ ay</small></div>
+            <ul>
+              <li>KolayJob &amp; KolayTeam erişimi</li>
+              <li>Gelişmiş analitik</li>
+              <li>Öncelikli destek</li>
+              <li>Mentor ve danışman erişimi</li>
+            </ul>
+          </article>
+
+          <article class="price-card">
+            <h3>Piyasaya Sürüldü</h3>
+            <p>Ürün pazarda, büyüme hedefli</p>
+            <div class="price">₺10.465 <small>/ ay</small></div>
+            <ul>
+              <li>API erişimi</li>
+              <li>2. el hisse satışı</li>
+              <li>Gelişmiş eşleştirme</li>
+              <li>SPK ve hukuki danışman erişimi</li>
+            </ul>
+          </article>
+
+          <article class="price-card">
+            <h3>Kurumsal</h3>
+            <p>Ölçeklenen girişimler için</p>
+            <div class="price">₺17.465 <small>/ ay</small></div>
+            <ul>
+              <li>Medya / PR görünürlüğü</li>
+              <li>Özel hesap yöneticisi</li>
+              <li>Özel danışmanlık erişimi</li>
+              <li>Gelişmiş destek seviyesi</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Değer önerisi</span>
+        <h2 class="section-title">Tek cümlede anlatmak gerekirse</h2>
+        <p class="section-subtitle">
+          KolayStartup, “startup kurmak ve büyütmek için gereken doğru insanlara, fırsatlara ve destek modüllerine tek yerden ulaşma” fikri etrafında kurgulanmış dijital bir ekosistem platformudur.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="cta">
+      <div class="container">
+        <div class="cta">
+          <div class="cta-row">
+            <div>
+              <span class="eyebrow">Hazır içerik sunumu</span>
+              <h2 class="section-title" style="margin-bottom:10px;">Bu metin müşteriye sunum için hazırlandı</h2>
+              <p class="section-subtitle" style="margin:0;max-width:760px;">
+                İstersen bir sonraki adımda bunu KolayStartup’ın kendi markasına daha da yakınlaştırabilir, ekran görüntülü versiyon, daha satış odaklı versiyon veya WordPress’e direkt gömülebilecek bloklu HTML versiyonu olarak da hazırlayabilirim.
+              </p>
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <a class="btn btn-primary" href="#">Demo Metin</a>
+              <a class="btn btn-secondary" href="#fiyatlandirma">Fiyatları İncele</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-box">
+      <div>Hazırlanan landing page taslağı • Türkçe HTML • Tek dosya</div>
+      <div>Responsive yapı • Modern vitrin tasarımı • Müşteri sunumuna uygun</div>
+    </div>
+  </footer>
+</body>
+</html>
