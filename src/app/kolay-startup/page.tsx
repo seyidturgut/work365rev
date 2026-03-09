@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import Link from "next/link";
 import {
   ChevronRight,
@@ -21,12 +21,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.55, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] as const },
   }),
 };
 
@@ -646,7 +646,7 @@ export default function KolayStartupPage() {
                     ))}
                   </ul>
                   <Link
-                    href="/register"
+                    href="/kayit-ol"
                     className={`mt-auto text-center py-3 rounded-full text-[14px] font-bold transition-colors ${
                       plan.featured
                         ? "bg-[#1b98d5] hover:bg-[#1686be] text-white"
@@ -688,7 +688,7 @@ export default function KolayStartupPage() {
               </div>
               <div className="flex flex-col gap-3 flex-shrink-0">
                 <Link
-                  href="/register"
+                  href="/kayit-ol"
                   className="bg-[#1b98d5] hover:bg-[#1686be] text-white px-8 py-4 rounded-full text-[15px] font-bold transition-colors flex items-center gap-2 whitespace-nowrap"
                 >
                   Hemen Başla <ArrowRight className="w-5 h-5" />

@@ -222,7 +222,7 @@ export default function DigitalInfrastructurePage() {
 
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                   <Link
-                    href="/register"
+                    href="/kayit-ol"
                     className="group/btn inline-flex items-center justify-center gap-2 rounded-full bg-[#1B98D5] px-8 py-4 text-[15px] font-bold text-white shadow-[0_8px_30px_rgba(27,152,213,0.35)] transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
                   >
                     <span className="flex items-center gap-2">
@@ -360,7 +360,7 @@ export default function DigitalInfrastructurePage() {
                 </div>
 
                 <Link
-                  href="/register"
+                  href="/kayit-ol"
                   className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[14px] font-bold transition-all duration-300 hover:scale-[1.02]"
                   style={{
                     backgroundColor: plan.savings ? plan.tagColor : "transparent",
@@ -427,7 +427,7 @@ export default function DigitalInfrastructurePage() {
                 <p className="mt-4 text-[13px] leading-6 text-[#475569]">{plan.target}</p>
 
                 <Link
-                  href="/register"
+                  href="/kayit-ol"
                   className={`mt-5 inline-flex w-full items-center justify-center rounded-full px-4 py-3 text-[13px] font-bold transition-all duration-300 hover:scale-[1.02] ${
                     plan.featured
                       ? "bg-[#B37A08] text-white shadow-sm"
@@ -516,7 +516,7 @@ export default function DigitalInfrastructurePage() {
                 </div>
 
                 <Link
-                  href="/register"
+                  href="/kayit-ol"
                   className={`mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[14px] font-bold transition-all duration-300 hover:scale-[1.02] ${
                     plan.popular
                       ? "bg-[#7C3AED] text-white shadow-[0_8px_30px_rgba(124,58,237,0.3)]"
@@ -586,7 +586,7 @@ export default function DigitalInfrastructurePage() {
             </div>
 
             <Link
-              href="/register"
+              href="/kayit-ol"
               className="group/cta inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-[15px] font-bold text-[#0F172A] shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-xl"
             >
               Başvuruya Başla <ArrowRight className="h-4 w-4 transition-transform group-hover/cta:translate-x-1" />

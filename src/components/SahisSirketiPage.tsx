@@ -17,6 +17,7 @@ import Header from "@/components/Header";
 import Breadcrumb from "@/components/Breadcrumb";
 import type { CompanyTypeConfig } from "@/app/sirket-kur/company-types";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { buildPackageSignupHref } from "@/lib/pricing";
 
 type CompanyTypeStoryPageProps = {
   config: CompanyTypeConfig;
@@ -71,6 +72,7 @@ function buildSteps(config: CompanyTypeConfig) {
 export default function CompanyTypeStoryPage({ config }: CompanyTypeStoryPageProps) {
   const steps = buildSteps(config);
   const ConfigIcon = config.icon;
+  const packageSignupHref = buildPackageSignupHref(config.name, config.price);
 
   return (
     <main className="bg-[#FAFBFC] pt-[92px]">
@@ -117,7 +119,7 @@ export default function CompanyTypeStoryPage({ config }: CompanyTypeStoryPagePro
 
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                   <Link
-                    href="/register"
+                    href={packageSignupHref}
                     className="group/btn relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-8 py-4 text-[15px] font-bold text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
                     style={{
                       backgroundColor: config.accent,
@@ -419,7 +421,7 @@ export default function CompanyTypeStoryPage({ config }: CompanyTypeStoryPagePro
             </div>
 
             <Link
-              href="/register"
+              href={packageSignupHref}
               className="group/cta inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-[15px] font-bold text-[#0F172A] shadow-lg transition-all duration-300 hover:scale-[1.03] hover:shadow-xl"
             >
               Hemen Başlayın <ArrowRight className="h-4 w-4 transition-transform group-hover/cta:translate-x-1" />

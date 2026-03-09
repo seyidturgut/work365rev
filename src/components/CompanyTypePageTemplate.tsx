@@ -4,6 +4,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
 import type { CompanyTypeConfig } from "@/app/sirket-kur/company-types";
+import { buildPackageSignupHref } from "@/lib/pricing";
 
 type CompanyTypePageTemplateProps = {
   config: CompanyTypeConfig;
@@ -11,6 +12,7 @@ type CompanyTypePageTemplateProps = {
 
 export default function CompanyTypePageTemplate({ config }: CompanyTypePageTemplateProps) {
   const Icon = config.icon;
+  const packageSignupHref = buildPackageSignupHref(config.name, config.price);
 
   return (
     <main className="bg-white pt-[92px]">
@@ -33,7 +35,7 @@ export default function CompanyTypePageTemplate({ config }: CompanyTypePageTempl
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="/register"
+                  href={packageSignupHref}
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-7 py-4 text-[15px] font-bold text-white"
                 >
                   {config.name} ile Başla <ArrowRight className="h-4 w-4" />
@@ -251,7 +253,7 @@ export default function CompanyTypePageTemplate({ config }: CompanyTypePageTempl
             </div>
 
             <Link
-              href="/register"
+              href={packageSignupHref}
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-7 py-4 text-[15px] font-bold text-black"
             >
               Hemen Başlayın <ArrowRight className="h-4 w-4" />

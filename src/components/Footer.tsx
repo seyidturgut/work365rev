@@ -31,13 +31,12 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="font-semibold mb-6">Şirket Kurulumu</h4>
+          <h4 className="font-semibold mb-6">Şirket Kur'daki Şirket Türleri</h4>
           <ul className="space-y-4 text-Work365-text text-sm">
-            <li><Link href="#" className="hover:text-black transition-colors">LLC Kurulumu</Link></li>
-            <li><Link href="#" className="hover:text-black transition-colors">C-Corp Kurulumu</Link></li>
-            <li><Link href="#" className="hover:text-black transition-colors">DAO LLC Kurulumu</Link></li>
-            <li><Link href="#" className="hover:text-black transition-colors">Kayıtlı Acente Hizmeti</Link></li>
-            <li><Link href="#" className="hover:text-black transition-colors">EIN Başvurusu</Link></li>
+            <li><Link href="/sirket-kur/sahis-sirketi" className="hover:text-black transition-colors">Şahıs Şirketi</Link></li>
+            <li><Link href="/sirket-kur/limited-sirketi" className="hover:text-black transition-colors">Limited Şirketi</Link></li>
+            <li><Link href="/sirket-kur/anonim-sirketi" className="hover:text-black transition-colors">Anonim Şirketi</Link></li>
+            <li><Link href="/sirket-kur/bilanco-sirketi" className="hover:text-black transition-colors">Bilanço Şirketi</Link></li>
           </ul>
         </div>
 

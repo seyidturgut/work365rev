@@ -6,6 +6,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight, Check, CheckCircle2, ShieldCheck, Sparkles, X } from "lucide-react";
+import { formatTl, toCompanyQueryValue } from "@/lib/pricing";
 
 const plans = [
   {
@@ -168,10 +169,6 @@ const ecosystemModules = [
   },
 ] as const;
 
-function formatTl(value: number) {
-  return `${new Intl.NumberFormat("tr-TR").format(value)} TL`;
-}
-
 export default function PricingPage() {
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("monthly");
 
@@ -227,7 +224,7 @@ export default function PricingPage() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
-                href="/register"
+                href="/kayit-ol"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-7 py-4 text-[15px] font-bold text-white"
               >
                 Hemen Başlayın <ArrowRight className="h-4 w-4" />
@@ -275,7 +272,15 @@ export default function PricingPage() {
           </div>
 
           <div className="grid gap-4 xl:grid-cols-4">
-            {plans.map((plan) => (
+            {plans.map((plan) => {
+              const displayPrice =
+                billingPeriod === "yearly" ? Math.round(plan.price * 0.85) : plan.price;
+              const packageQuery = new URLSearchParams({
+                company: toCompanyQueryValue(plan.name),
+                price: String(displayPrice),
+              }).toString();
+
+              return (
               <div
                 key={plan.name}
                 className={`relative flex h-full flex-col rounded-[34px] bg-white p-5 shadow-sm ring-1 ring-black/6 ${
@@ -294,9 +299,7 @@ export default function PricingPage() {
                   </div>
                   <p className="mt-3 text-[16px] font-bold text-black">{plan.name}</p>
                   <p className="mt-3 text-[38px] font-bold tracking-[-0.05em] text-black">
-                    {formatTl(
-                      billingPeriod === "yearly" ? Math.round(plan.price * 0.85) : plan.price
-                    )}
+                    {formatTl(displayPrice)}
                   </p>
                   {billingPeriod === "yearly" ? (
                     <p className="mt-2 text-[13px] font-semibold leading-6 text-black/45 line-through">
@@ -316,7 +319,7 @@ export default function PricingPage() {
                 </div>
 
                 <Link
-                  href="/register"
+                  href={`/kayit-ol?${packageQuery}`}
                   className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-[14px] font-bold ${
                     plan.highlight ? "bg-[#1b98d5] text-white" : "bg-black text-white"
                   }`}
@@ -324,7 +327,8 @@ export default function PricingPage() {
                   Bu Paketle Başla <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -449,7 +453,7 @@ export default function PricingPage() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/register"
+              href="/kayit-ol"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-7 py-4 text-[15px] font-bold text-white"
             >
               Hemen Başlayın <ArrowRight className="h-4 w-4" />

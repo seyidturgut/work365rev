@@ -91,7 +91,7 @@ export default function Header() {
       >
         <div className="flex items-center whitespace-nowrap text-[13px] font-normal text-Work365-text">
           <span className="mr-2">Zaten Bir Hesabınız Var Mı?</span>
-          <Link href="/login" className="flex items-center font-bold transition-opacity hover:opacity-70">
+          <Link href="/giris" className="flex items-center font-bold transition-opacity hover:opacity-70">
             Giriş Yap <ChevronRight className="ml-1 h-4 w-4" strokeWidth={3} />
           </Link>
         </div>
@@ -173,7 +173,7 @@ export default function Header() {
 
         <div className="hidden items-center xl:flex">
           <Link
-            href="/register"
+            href="/kayit-ol"
             className="whitespace-nowrap rounded-full bg-black px-5 py-3 text-[13px] font-bold text-white shadow-sm transition-colors hover:bg-gray-800"
           >
             Kayıt Ol
@@ -249,7 +249,7 @@ export default function Header() {
             </div>
 
             <Link
-              href="/register"
+              href="/kayit-ol"
               className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-black px-5 py-3 text-[13px] font-bold text-white"
             >
               Kayıt Ol

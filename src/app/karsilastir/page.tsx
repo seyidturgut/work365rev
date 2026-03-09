@@ -120,7 +120,7 @@ export default function ComparisonPage() {
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
-                  href="/register"
+                  href="/kayit-ol"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-7 py-4 text-[15px] font-bold text-white"
                 >
                   Hemen Başlayın <ArrowRight className="h-4 w-4" />
@@ -287,7 +287,7 @@ export default function ComparisonPage() {
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/register"
+              href="/kayit-ol"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-black px-7 py-4 text-[15px] font-bold text-white"
             >
               Hemen Başlayın <ArrowRight className="h-4 w-4" />
