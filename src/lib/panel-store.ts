@@ -398,6 +398,29 @@ export async function getUserById(userId: string | null | undefined) {
   return user ? sanitizeUser(user) : null;
 }
 
+export async function upsertSessionUser(sessionUser: PanelSessionUser) {
+  const store = await readStore();
+  const existingUserIndex = store.users.findIndex((item) => item.id === sessionUser.id);
+
+  if (existingUserIndex >= 0) {
+    store.users[existingUserIndex] = {
+      ...store.users[existingUserIndex],
+      ...sessionUser,
+      password: store.users[existingUserIndex].password,
+      updatedAt: new Date().toISOString(),
+    };
+  } else {
+    store.users.push({
+      ...sessionUser,
+      password: "session-restored",
+      updatedAt: new Date().toISOString(),
+    });
+  }
+
+  await writeStore(store);
+  return sessionUser;
+}
+
 export async function updateOnboardingStep(input: UpdateStepInput) {
   const store = await readStore();
   const user = store.users.find((item) => item.id === input.userId);

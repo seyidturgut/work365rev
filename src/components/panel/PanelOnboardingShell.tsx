@@ -237,7 +237,7 @@ export default function PanelOnboardingShell({ initialUser }: PanelOnboardingShe
               </Link>
             </div>
             <p className="mt-10 text-[12px] uppercase tracking-[0.3em] text-[#7DD3FC]">Kuruluş Akışı</p>
-            <h1 className="mt-4 max-w-[10ch] text-[52px] font-bold leading-[0.94] tracking-[-0.06em] text-white">
+            <h1 className="mt-4 max-w-[11ch] text-[38px] font-semibold leading-[1.02] tracking-[-0.05em] text-white xl:text-[44px]">
               Kuruluş sürecini adım adım netleştiriyoruz.
             </h1>
             <p className="mt-6 max-w-md text-[16px] leading-7 text-white/72">
@@ -301,7 +301,7 @@ export default function PanelOnboardingShell({ initialUser }: PanelOnboardingShe
                 <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#1B98D5]">
                   {activeStep} / {WIZARD_STEPS.length}
                 </p>
-                <h2 className="mt-5 max-w-[14ch] text-[40px] font-bold leading-[0.98] tracking-[-0.06em] text-[#0F172A] sm:text-[54px] lg:text-[68px]">
+                <h2 className="mt-5 max-w-[15ch] text-[32px] font-semibold leading-[1.03] tracking-[-0.05em] text-[#0F172A] sm:text-[40px] lg:text-[50px]">
                   {typedQuestion}
                 </h2>
                 <p className="mt-5 max-w-2xl text-[16px] leading-7 text-[#64748B]">{stepHint}</p>

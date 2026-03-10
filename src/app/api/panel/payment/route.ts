@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import { getSessionUserId, getSessionUserState, setPanelSessionCookies } from "@/lib/panel-session";
-import { savePayment } from "@/lib/panel-store";
+import { savePayment, upsertSessionUser } from "@/lib/panel-store";
 
 type PaymentPayload = {
   currentStep?: number;
@@ -48,6 +48,10 @@ export async function POST(request: Request) {
       if (!invoice.companyTitle || !invoice.taxNumber || !invoice.address || !invoice.city) {
         return NextResponse.json({ error: "Fatura bilgilerini eksiksiz girin." }, { status: 400 });
       }
+    }
+
+    if (sessionUser) {
+      await upsertSessionUser(sessionUser);
     }
 
     const user = await savePayment({

@@ -227,7 +227,7 @@ export default function PanelPaymentShell({ initialUser }: PanelPaymentShellProp
           >
             <ShieldCheck className="h-12 w-12 text-[#7DD3FC]" />
             <p className="mt-6 text-[14px] uppercase tracking-[0.24em] text-[#7DD3FC]">3D Secure</p>
-            <h2 className="mt-4 max-w-[12ch] text-[40px] font-bold leading-[0.98] tracking-[-0.05em] text-white">
+            <h2 className="mt-4 max-w-[13ch] text-[30px] font-semibold leading-[1.02] tracking-[-0.04em] text-white sm:text-[34px]">
               Ödeme doğrulanıyor.
             </h2>
             <p className="mt-5 max-w-xl text-[16px] leading-7 text-white/72">
@@ -245,7 +245,7 @@ export default function PanelPaymentShell({ initialUser }: PanelPaymentShellProp
               Wizard’a dön
             </Link>
             <p className="mt-10 text-[12px] uppercase tracking-[0.28em] text-[#7DD3FC]">Ödeme</p>
-            <h1 className="mt-4 max-w-[10ch] text-[52px] font-bold leading-[0.94] tracking-[-0.06em] text-white">
+            <h1 className="mt-4 max-w-[11ch] text-[38px] font-semibold leading-[1.02] tracking-[-0.05em] text-white xl:text-[44px]">
               Ödeme adımını güvenle tamamlayın.
             </h1>
           </div>
@@ -309,7 +309,7 @@ export default function PanelPaymentShell({ initialUser }: PanelPaymentShellProp
                 <p className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#1B98D5]">
                   {step} / {PAYMENT_STEPS.length}
                 </p>
-                <h2 className="mt-5 max-w-[14ch] text-[40px] font-bold leading-[0.98] tracking-[-0.06em] text-[#0F172A] sm:text-[54px] lg:text-[68px]">
+                <h2 className="mt-5 max-w-[15ch] text-[32px] font-semibold leading-[1.03] tracking-[-0.05em] text-[#0F172A] sm:text-[40px] lg:text-[50px]">
                   {typedQuestion}
                 </h2>
 

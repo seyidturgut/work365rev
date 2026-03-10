@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import { getSessionUserId, getSessionUserState, setPanelSessionCookies } from "@/lib/panel-session";
-import { updateOnboardingStep } from "@/lib/panel-store";
+import { updateOnboardingStep, upsertSessionUser } from "@/lib/panel-store";
 import type { WizardStepId } from "@/lib/panel-types";
 
 type OnboardingPayload = {
@@ -25,6 +25,10 @@ export async function POST(request: Request) {
 
     if (!body.stepId || !body.values) {
       return NextResponse.json({ error: "Gecerli bir onboarding adimi gonderin." }, { status: 400 });
+    }
+
+    if (sessionUser) {
+      await upsertSessionUser(sessionUser);
     }
 
     const user = await updateOnboardingStep({
