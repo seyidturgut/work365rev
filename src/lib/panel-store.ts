@@ -10,7 +10,12 @@ import type {
   WizardStepId,
 } from "@/lib/panel-types";
 
-const DATA_DIR = path.join(process.cwd(), "src", "data");
+const BUNDLED_DATA_DIR = path.join(process.cwd(), "src", "data");
+const BUNDLED_DATA_FILE = path.join(BUNDLED_DATA_DIR, "panel-users.json");
+const DATA_DIR =
+  process.env.VERCEL || process.env.NODE_ENV === "production"
+    ? path.join("/tmp", "work365")
+    : BUNDLED_DATA_DIR;
 const DATA_FILE = path.join(DATA_DIR, "panel-users.json");
 const WIZARD_STEP_ORDER: WizardStepId[] = ["package", "fullName", "phone", "companyName", "activityArea"];
 const LEGACY_PACKAGE_PRICE_MAP: Record<string, number> = {
@@ -256,7 +261,12 @@ async function ensureStore() {
     await readFile(DATA_FILE, "utf8");
   } catch {
     await mkdir(DATA_DIR, { recursive: true });
-    await writeFile(DATA_FILE, JSON.stringify({ users: [] }, null, 2), "utf8");
+    try {
+      const bundled = await readFile(BUNDLED_DATA_FILE, "utf8");
+      await writeFile(DATA_FILE, bundled, "utf8");
+    } catch {
+      await writeFile(DATA_FILE, JSON.stringify({ users: [] }, null, 2), "utf8");
+    }
   }
 }
 
