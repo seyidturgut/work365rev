@@ -6,7 +6,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight, Check, CheckCircle2, ShieldCheck, Sparkles, X } from "lucide-react";
-import { formatTl, toCompanyQueryValue } from "@/lib/pricing";
+import { buildPackageSignupHref, formatTl } from "@/lib/pricing";
 
 const plans = [
   {
@@ -275,11 +275,6 @@ export default function PricingPage() {
             {plans.map((plan) => {
               const displayPrice =
                 billingPeriod === "yearly" ? Math.round(plan.price * 0.85) : plan.price;
-              const packageQuery = new URLSearchParams({
-                company: toCompanyQueryValue(plan.name),
-                price: String(displayPrice),
-              }).toString();
-
               return (
               <div
                 key={plan.name}
@@ -319,7 +314,13 @@ export default function PricingPage() {
                 </div>
 
                 <Link
-                  href={`/kayit-ol?${packageQuery}`}
+                  href={buildPackageSignupHref(plan.name, displayPrice, {
+                    label: plan.name,
+                    source: "Fiyatlandırma sayfasından seçildi",
+                    term: billingPeriod === "yearly" ? "Yıllık plan" : "Aylık plan",
+                    description: `${plan.badge} paket. ${plan.yearly}`,
+                    features: includedItems,
+                  })}
                   className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-[14px] font-bold ${
                     plan.highlight ? "bg-[#1b98d5] text-white" : "bg-black text-white"
                   }`}

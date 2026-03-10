@@ -1,0 +1,397 @@
+{
+  "users": [
+    {
+      "id": "fed73348-478b-49e0-a6e0-05ac1cf937d7",
+      "email": "google-demo-1773099505665@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "sahis-sirketi",
+        "label": "Şahıs Şirketi",
+        "price": 4500,
+        "priceLabel": "4.500 TL",
+        "source": null,
+        "term": null,
+        "detailLabel": "Seçilen paket",
+        "description": null,
+        "features": []
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "sahis-sirketi",
+            "label": "Şahıs Şirketi",
+            "locked": true,
+            "confirmed": false
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": "ss"
+          },
+          "activityArea": {
+            "value": "web\n"
+          }
+        }
+      },
+      "payment": {
+        "status": "paid",
+        "currentStep": 1,
+        "cardHolderName": "Google Demo Kullanıcısı",
+        "cardLast4": "1000",
+        "invoice": {
+          "companyTitle": "Seyid Turgut",
+          "taxNumber": "1234567890",
+          "address": "fcewfsf",
+          "city": "Kocaeli"
+        },
+        "paidAt": "2026-03-09T23:41:19.752Z"
+      },
+      "eTugraStatus": "triggered",
+      "createdAt": "2026-03-09T23:38:25.666Z",
+      "updatedAt": "2026-03-09T23:41:19.752Z"
+    },
+    {
+      "id": "8ab0dabf-d243-49a7-b3e7-3f52b51022e1",
+      "email": "google-demo-1773099784153@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": null,
+      "wizard": {
+        "currentStep": 1,
+        "completedStep": 0,
+        "status": "not_started",
+        "answers": {
+          "package": {
+            "companySlug": "",
+            "label": "",
+            "locked": false,
+            "confirmed": false
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": ""
+          },
+          "activityArea": {
+            "value": ""
+          }
+        }
+      },
+      "payment": {
+        "status": "pending",
+        "currentStep": 1,
+        "cardHolderName": "",
+        "cardLast4": "",
+        "invoice": {
+          "companyTitle": "",
+          "taxNumber": "",
+          "address": "",
+          "city": ""
+        },
+        "paidAt": null
+      },
+      "eTugraStatus": "idle",
+      "createdAt": "2026-03-09T23:43:04.154Z",
+      "updatedAt": "2026-03-09T23:43:04.154Z"
+    },
+    {
+      "id": "4e0768fa-b04d-4583-862b-5ccd55bb2948",
+      "email": "google-demo-1773100107653@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": null,
+      "wizard": {
+        "currentStep": 1,
+        "completedStep": 0,
+        "status": "not_started",
+        "answers": {
+          "package": {
+            "companySlug": "",
+            "label": "",
+            "locked": false,
+            "confirmed": false
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": ""
+          },
+          "activityArea": {
+            "value": ""
+          }
+        }
+      },
+      "payment": {
+        "status": "pending",
+        "currentStep": 1,
+        "cardHolderName": "",
+        "cardLast4": "",
+        "invoice": {
+          "companyTitle": "",
+          "taxNumber": "",
+          "address": "",
+          "city": ""
+        },
+        "paidAt": null
+      },
+      "eTugraStatus": "idle",
+      "createdAt": "2026-03-09T23:48:27.653Z",
+      "updatedAt": "2026-03-09T23:48:27.653Z"
+    },
+    {
+      "id": "047f9f5b-f7f4-472d-95b6-e126b49d3197",
+      "email": "google-demo-1773100408275@work365.local",
+      "password": "google-demo",
+      "fullName": "Seyid Turgut",
+      "phone": "05336746421",
+      "selectedPackage": {
+        "companySlug": "anonim-sirketi",
+        "label": "Anonim Şirketi",
+        "price": 12500,
+        "priceLabel": "12.500 TL",
+        "source": null,
+        "term": null,
+        "detailLabel": "Seçilen paket",
+        "description": null,
+        "features": []
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "anonim-sirketi",
+            "label": "Anonim Şirketi",
+            "locked": true,
+            "confirmed": true
+          },
+          "fullName": {
+            "value": "Seyid Turgut"
+          },
+          "phone": {
+            "value": "05336746421"
+          },
+          "companyName": {
+            "value": "Beyincik İşleri"
+          },
+          "activityArea": {
+            "value": "Web Sitesi Tasarım \nÖzel Yazılım"
+          }
+        }
+      },
+      "payment": {
+        "status": "paid",
+        "currentStep": 7,
+        "cardHolderName": "Seyid Turgut",
+        "cardLast4": "1000",
+        "invoice": {
+          "companyTitle": "Beyincik İşleri",
+          "taxNumber": "1234556678",
+          "address": "Fenerbahçe, Iğrıp Sk. No:13, 34726 Kadıköy/İstanbul",
+          "city": "Kocaeli"
+        },
+        "paidAt": "2026-03-09T23:55:47.489Z"
+      },
+      "eTugraStatus": "triggered",
+      "createdAt": "2026-03-09T23:53:28.275Z",
+      "updatedAt": "2026-03-09T23:55:47.489Z"
+    },
+    {
+      "id": "265a6f0f-d1a6-461a-bb01-ebe3b6ea2860",
+      "email": "google-demo-1773100570360@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "limited-sirketi",
+        "label": "Limited Şirketi",
+        "price": 7500,
+        "priceLabel": "7.500 TL",
+        "source": null,
+        "term": null,
+        "detailLabel": "Seçilen paket",
+        "description": null,
+        "features": []
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "limited-sirketi",
+            "label": "Limited Şirketi",
+            "locked": true,
+            "confirmed": true
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": "sa"
+          },
+          "activityArea": {
+            "value": "a"
+          }
+        }
+      },
+      "payment": {
+        "status": "paid",
+        "currentStep": 7,
+        "cardHolderName": "Google Demo Kullanıcısı",
+        "cardLast4": "1000",
+        "invoice": {
+          "companyTitle": "Limited Şirketi",
+          "taxNumber": "12qw3456789",
+          "address": "wvev",
+          "city": "dfwfss"
+        },
+        "paidAt": "2026-03-09T23:58:05.516Z"
+      },
+      "eTugraStatus": "triggered",
+      "createdAt": "2026-03-09T23:56:10.360Z",
+      "updatedAt": "2026-03-09T23:58:05.516Z"
+    },
+    {
+      "id": "23598ebc-ce56-47cb-b574-05778b34f534",
+      "email": "google-demo-1773100691019@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "anonim-sirketi",
+        "label": "Anonim Şirketi",
+        "price": 12500,
+        "priceLabel": "12.500 TL",
+        "source": null,
+        "term": null,
+        "detailLabel": "Seçilen paket",
+        "description": null,
+        "features": []
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "anonim-sirketi",
+            "label": "Anonim Şirketi",
+            "locked": true,
+            "confirmed": true
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": "r"
+          },
+          "activityArea": {
+            "value": "rr"
+          }
+        }
+      },
+      "payment": {
+        "status": "paid",
+        "currentStep": 7,
+        "cardHolderName": "Google Demo Kullanıcısı",
+        "cardLast4": "1000",
+        "invoice": {
+          "companyTitle": "Anonim Şirketi",
+          "taxNumber": "345675432",
+          "address": "wdcfv",
+          "city": "kocaeli"
+        },
+        "paidAt": "2026-03-10T00:02:36.654Z"
+      },
+      "eTugraStatus": "triggered",
+      "createdAt": "2026-03-09T23:58:11.019Z",
+      "updatedAt": "2026-03-10T00:02:36.654Z"
+    },
+    {
+      "id": "23cdaea7-9bc4-4fd4-9b85-fb2a2f3f13cf",
+      "email": "google-demo-1773101447480@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "anonim-sirketi",
+        "label": "Anonim Şirketi",
+        "price": null,
+        "priceLabel": "Teklif sırasında netleşecek",
+        "source": null,
+        "term": null,
+        "detailLabel": "Seçilen paket",
+        "description": null,
+        "features": []
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "anonim-sirketi",
+            "label": "Anonim Şirketi",
+            "locked": true,
+            "confirmed": true
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": "Beyincik İşleri"
+          },
+          "activityArea": {
+            "value": "Yazılım"
+          }
+        }
+      },
+      "payment": {
+        "status": "paid",
+        "currentStep": 7,
+        "cardHolderName": "Google Demo Kullanıcısı",
+        "cardLast4": "1000",
+        "invoice": {
+          "companyTitle": "Anonim Şirketi",
+          "taxNumber": "1234567",
+          "address": "wsdfvbgnhmj",
+          "city": "kocaeli"
+        },
+        "paidAt": "2026-03-10T00:11:37.669Z"
+      },
+      "eTugraStatus": "triggered",
+      "createdAt": "2026-03-10T00:10:47.480Z",
+      "updatedAt": "2026-03-10T00:11:37.669Z"
+    }
+  ]
+}

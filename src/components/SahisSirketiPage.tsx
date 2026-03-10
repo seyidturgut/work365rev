@@ -72,7 +72,13 @@ function buildSteps(config: CompanyTypeConfig) {
 export default function CompanyTypeStoryPage({ config }: CompanyTypeStoryPageProps) {
   const steps = buildSteps(config);
   const ConfigIcon = config.icon;
-  const packageSignupHref = buildPackageSignupHref(config.name, config.price);
+  const packageSignupHref = buildPackageSignupHref(config.name, config.price, {
+    label: config.name,
+    source: "Şirket Kur sayfasından seçildi",
+    term: "Tek seferlik başlangıç paketi",
+    description: config.heroBody,
+    features: [...config.includedItems.slice(0, 4)],
+  });
 
   return (
     <main className="bg-[#FAFBFC] pt-[92px]">

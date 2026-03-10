@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, LockKeyhole, Mail, Trash2, UserRound } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, LockKeyhole, Mail, Phone, Trash2, UserRound } from "lucide-react";
 import { FormEvent, ReactNode, useEffect, useState } from "react";
 import type { AuthMode } from "@/lib/auth-content";
 import type { SelectedPackageSummary } from "@/lib/pricing";
@@ -21,6 +21,7 @@ type LoginFields = {
 
 type SignupFields = {
   fullName: string;
+  phone: string;
   email: string;
   password: string;
   confirmPassword: string;
@@ -38,6 +39,7 @@ const defaultLoginFields: LoginFields = {
 
 const defaultSignupFields: SignupFields = {
   fullName: "",
+  phone: "",
   email: "",
   password: "",
   confirmPassword: "",
@@ -53,6 +55,8 @@ export default function AuthCard({ initialMode, selectedPackage }: AuthCardProps
   const [errors, setErrors] = useState<ValidationErrors>({});
   const [feedback, setFeedback] = useState<string | null>(null);
   const [isPackageVisible, setIsPackageVisible] = useState(Boolean(selectedPackage));
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
 
   useEffect(() => {
     setMode(initialMode);
@@ -76,6 +80,11 @@ export default function AuthCard({ initialMode, selectedPackage }: AuthCardProps
     const nextQuery = new URLSearchParams(searchParams.toString());
     nextQuery.delete("company");
     nextQuery.delete("price");
+    nextQuery.delete("label");
+    nextQuery.delete("source");
+    nextQuery.delete("term");
+    nextQuery.delete("description");
+    nextQuery.delete("features");
     const nextUrl = nextQuery.toString() ? `/kayit-ol?${nextQuery.toString()}` : "/kayit-ol";
     router.replace(nextUrl, { scroll: false });
   };
@@ -105,6 +114,10 @@ export default function AuthCard({ initialMode, selectedPackage }: AuthCardProps
       nextErrors.fullName = "Ad soyad alanı zorunludur.";
     }
 
+    if (!signupFields.phone.trim()) {
+      nextErrors.phone = "Telefon alanı zorunludur.";
+    }
+
     if (!signupFields.email.trim()) {
       nextErrors.email = "E-posta alanı zorunludur.";
     } else if (!EMAIL_PATTERN.test(signupFields.email)) {
@@ -130,7 +143,29 @@ export default function AuthCard({ initialMode, selectedPackage }: AuthCardProps
     return nextErrors;
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const getSelectedPackagePayload = () => ({
+    company: searchParams.get("company"),
+    price: searchParams.get("price"),
+    label: searchParams.get("label"),
+    source: searchParams.get("source"),
+    term: searchParams.get("term"),
+    description: searchParams.get("description"),
+    features: (() => {
+      const rawFeatures = searchParams.get("features");
+      if (!rawFeatures) {
+        return null;
+      }
+
+      try {
+        const parsed = JSON.parse(rawFeatures) as unknown;
+        return Array.isArray(parsed) ? parsed.filter((item): item is string => typeof item === "string") : null;
+      } catch {
+        return null;
+      }
+    })(),
+  });
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const nextErrors = mode === "login" ? validateLogin() : validateSignup();
@@ -141,15 +176,92 @@ export default function AuthCard({ initialMode, selectedPackage }: AuthCardProps
       return;
     }
 
-    setFeedback(
-      mode === "login"
-        ? "Demo giriş akışı hazır. Gerçek auth entegrasyonu bağlandığında bu form canlı çalışacak."
-        : "Demo kayıt akışı hazır. Gerçek auth entegrasyonu bağlandığında hesabınız burada oluşturulacak."
-    );
+    setIsSubmitting(true);
+    setFeedback(null);
+
+    try {
+      const response = await fetch(mode === "login" ? "/api/auth/login" : "/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(
+          mode === "login"
+            ? {
+                email: loginFields.email,
+                password: loginFields.password,
+                selectedPackage: getSelectedPackagePayload(),
+              }
+            : {
+                fullName: signupFields.fullName,
+                phone: signupFields.phone,
+                email: signupFields.email,
+                password: signupFields.password,
+                selectedPackage: getSelectedPackagePayload(),
+              }
+        ),
+      });
+
+      const payload = (await response.json()) as { error?: string; redirectTo?: string };
+
+      if (!response.ok) {
+        setErrors({ form: payload.error || "İşlem sırasında bir hata oluştu." });
+        return;
+      }
+
+      setFeedback(mode === "login" ? "Giriş tamamlandı. Panelinize yönlendiriliyorsunuz." : "Hesabınız oluşturuldu. Panel akışı başlatılıyor.");
+      router.push(payload.redirectTo || "/panel");
+      router.refresh();
+    } catch {
+      setErrors({ form: "İşlem sırasında beklenmeyen bir hata oluştu." });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    setErrors({});
+    setFeedback("Google demo akışı başlatılıyor.");
+    setIsGoogleLoading(true);
+
+    try {
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          provider: "google",
+          selectedPackage: getSelectedPackagePayload(),
+        }),
+      });
+
+      const payload = (await response.json()) as { error?: string; redirectTo?: string };
+
+      if (!response.ok) {
+        setErrors({ form: payload.error || "Google demo akışı başlatılamadı." });
+        setFeedback(null);
+        return;
+      }
+
+      router.push(payload.redirectTo || "/panel");
+      router.refresh();
+    } catch {
+      setErrors({ form: "Google demo akışı sırasında hata oluştu." });
+      setFeedback(null);
+    } finally {
+      setIsGoogleLoading(false);
+    }
   };
 
   return (
     <div className="mx-auto flex h-full w-full max-w-[760px] flex-col rounded-[32px] border border-black/8 bg-white p-5 shadow-[0_30px_80px_rgba(15,23,42,0.08)] sm:p-7 lg:min-h-[calc(100vh-48px)] lg:p-8">
+      <div className="mb-5">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-[#F8FAFC] px-4 py-2.5 text-[13px] font-bold text-[#0F172A] transition-colors hover:bg-white"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Ana Sayfaya Dön
+        </Link>
+      </div>
+
       <div className="mb-6 flex flex-col items-center text-center">
         <Image src="/LOGO-END.svg" alt="Work365" width={150} height={40} className="h-10 w-auto" />
         <h2 className="mt-6 text-[34px] font-bold tracking-[-0.04em] text-[#0F172A] sm:text-[38px]">
@@ -188,7 +300,22 @@ export default function AuthCard({ initialMode, selectedPackage }: AuthCardProps
                 Seçtiğiniz Paket
               </p>
               <p className="mt-3 text-[16px] font-bold text-[#0F172A]">{selectedPackage.company}</p>
-              <p className="mt-1 text-[13px] text-[#64748B]">Fiyatlandırma ekranından seçildi</p>
+              <p className="mt-1 text-[13px] text-[#64748B]">{selectedPackage.detailLabel}</p>
+              {selectedPackage.description ? (
+                <p className="mt-2 max-w-xl text-[13px] leading-6 text-[#475569]">{selectedPackage.description}</p>
+              ) : null}
+              {selectedPackage.features.length > 0 ? (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {selectedPackage.features.slice(0, 3).map((feature) => (
+                    <span
+                      key={feature}
+                      className="rounded-full bg-white px-2.5 py-1 text-[12px] text-[#334155] ring-1 ring-black/6"
+                    >
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
             </div>
             <div className="flex shrink-0 items-center gap-2 self-start">
               <span className="rounded-full bg-white px-3 py-2 text-[13px] font-bold text-[#0F172A] ring-1 ring-black/6">
@@ -208,6 +335,22 @@ export default function AuthCard({ initialMode, selectedPackage }: AuthCardProps
       ) : null}
 
       <form onSubmit={handleSubmit} noValidate className="space-y-4">
+        <button
+          type="button"
+          onClick={handleGoogleLogin}
+          disabled={isGoogleLoading || isSubmitting}
+          className="flex w-full items-center justify-center gap-3 rounded-[18px] border border-[#D7DFE8] bg-[#F8FBFD] px-5 py-3.5 text-[15px] font-bold text-[#0F172A] transition-colors hover:bg-white disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          <span className="text-[18px]">G</span>
+          {isGoogleLoading ? "Google ile devam ediliyor..." : "Google ile Giriş"}
+        </button>
+
+        <div className="flex items-center gap-3 text-[12px] uppercase tracking-[0.22em] text-[#94A3B8]">
+          <span className="h-px flex-1 bg-[#E2E8F0]" />
+          veya e-posta ile devam et
+          <span className="h-px flex-1 bg-[#E2E8F0]" />
+        </div>
+
         <AnimatePresence mode="wait">
           {mode === "login" ? (
             <motion.div
@@ -264,6 +407,17 @@ export default function AuthCard({ initialMode, selectedPackage }: AuthCardProps
                   onChange={(value) => setSignupFields((current) => ({ ...current, fullName: value }))}
                 />
                 <Field
+                  label="Telefon"
+                  icon={<Phone className="h-4 w-4" />}
+                  type="tel"
+                  placeholder="05xx xxx xx xx"
+                  value={signupFields.phone}
+                  error={errors.phone}
+                  onChange={(value) => setSignupFields((current) => ({ ...current, phone: value }))}
+                />
+              </div>
+              <div className="grid gap-4 md:grid-cols-2">
+                <Field
                   label="E-posta"
                   icon={<Mail className="h-4 w-4" />}
                   type="email"
@@ -272,8 +426,6 @@ export default function AuthCard({ initialMode, selectedPackage }: AuthCardProps
                   error={errors.email}
                   onChange={(value) => setSignupFields((current) => ({ ...current, email: value }))}
                 />
-              </div>
-              <div className="grid gap-4 md:grid-cols-2">
                 <Field
                   label="Şifre"
                   icon={<LockKeyhole className="h-4 w-4" />}
@@ -315,6 +467,8 @@ export default function AuthCard({ initialMode, selectedPackage }: AuthCardProps
           )}
         </AnimatePresence>
 
+        {errors.form ? <p className="text-[13px] font-medium text-[#DC2626]">{errors.form}</p> : null}
+
         {feedback ? (
           <div className="rounded-[20px] border border-[#BDE7D1] bg-[#F1FBF6] px-4 py-4 text-[14px] text-[#166534]">
             <div className="flex items-start gap-3">
@@ -326,9 +480,10 @@ export default function AuthCard({ initialMode, selectedPackage }: AuthCardProps
 
         <button
           type="submit"
+          disabled={isSubmitting || isGoogleLoading}
           className="flex w-full items-center justify-center gap-2 rounded-[18px] bg-[#0F172A] px-5 py-3.5 text-[15px] font-bold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-black"
         >
-          {mode === "login" ? "Giriş Yap" : "Ücretsiz Hesap Oluştur"}
+          {isSubmitting ? "İşleniyor..." : mode === "login" ? "Giriş Yap" : "Ücretsiz Hesap Oluştur"}
           <ArrowRight className="h-4 w-4" />
         </button>
 

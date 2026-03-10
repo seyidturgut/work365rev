@@ -9,6 +9,11 @@ type RegisterPageProps = {
     mode?: string;
     company?: string;
     price?: string;
+    label?: string;
+    source?: string;
+    term?: string;
+    description?: string;
+    features?: string;
   }>;
 };
 
@@ -24,7 +29,15 @@ function resolveMode(mode?: string): AuthMode {
 export default async function RegisterPage({ searchParams }: RegisterPageProps) {
   const params = searchParams ? await searchParams : undefined;
   const initialMode = resolveMode(params?.mode);
-  const selectedPackage = getSelectedPackageSummary(params?.company, params?.price);
+  const selectedPackage = getSelectedPackageSummary(
+    params?.company,
+    params?.price,
+    params?.label,
+    params?.source,
+    params?.term,
+    params?.description,
+    params?.features
+  );
 
   return (
     <main className="min-h-screen bg-[linear-gradient(180deg,#F7FBFF_0%,#F2F6FB_100%)] px-4 py-4 lg:px-6 lg:py-6">

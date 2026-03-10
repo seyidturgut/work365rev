@@ -4,6 +4,11 @@ type LoginPageProps = {
   searchParams?: Promise<{
     company?: string;
     price?: string;
+    label?: string;
+    source?: string;
+    term?: string;
+    description?: string;
+    features?: string;
   }>;
 };
 
@@ -17,6 +22,26 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
 
   if (params?.price) {
     query.set("price", params.price);
+  }
+
+  if (params?.label) {
+    query.set("label", params.label);
+  }
+
+  if (params?.source) {
+    query.set("source", params.source);
+  }
+
+  if (params?.term) {
+    query.set("term", params.term);
+  }
+
+  if (params?.description) {
+    query.set("description", params.description);
+  }
+
+  if (params?.features) {
+    query.set("features", params.features);
   }
 
   const suffix = query.toString() ? `?${query.toString()}` : "";

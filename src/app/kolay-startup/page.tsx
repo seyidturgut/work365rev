@@ -20,6 +20,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
+import { buildPackageSignupHref } from "@/lib/pricing";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -646,7 +647,13 @@ export default function KolayStartupPage() {
                     ))}
                   </ul>
                   <Link
-                    href="/kayit-ol"
+                    href={buildPackageSignupHref(plan.name, plan.price, {
+                      label: plan.name,
+                      source: "Kolay Startup sayfasından seçildi",
+                      term: "Aylık plan",
+                      description: plan.desc,
+                      features: plan.features,
+                    })}
                     className={`mt-auto text-center py-3 rounded-full text-[14px] font-bold transition-colors ${
                       plan.featured
                         ? "bg-[#1b98d5] hover:bg-[#1686be] text-white"

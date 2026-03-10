@@ -12,7 +12,13 @@ type CompanyTypePageTemplateProps = {
 
 export default function CompanyTypePageTemplate({ config }: CompanyTypePageTemplateProps) {
   const Icon = config.icon;
-  const packageSignupHref = buildPackageSignupHref(config.name, config.price);
+  const packageSignupHref = buildPackageSignupHref(config.name, config.price, {
+    label: config.name,
+    source: "Şirket Kur sayfasından seçildi",
+    term: "Tek seferlik başlangıç paketi",
+    description: config.heroBody,
+    features: [...config.includedItems.slice(0, 4)],
+  });
 
   return (
     <main className="bg-white pt-[92px]">

@@ -22,6 +22,7 @@ import {
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Breadcrumb from "@/components/Breadcrumb";
+import { buildPackageSignupHref } from "@/lib/pricing";
 
 /* ─── DATA ─── */
 
@@ -239,14 +240,14 @@ export default function EkosistemPage() {
                 </p>
 
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                  <Link
-                    href="/kayit-ol"
+                  <a
+                    href="#m1"
                     className="group/btn inline-flex items-center justify-center gap-2 rounded-full bg-[#7C3AED] px-8 py-4 text-[15px] font-bold text-white shadow-[0_8px_30px_rgba(124,58,237,0.35)] transition-all duration-300 hover:scale-[1.03] hover:shadow-lg"
                   >
                     <span className="flex items-center gap-2">
                       Modül Seçin <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                     </span>
-                  </Link>
+                  </a>
                   <a
                     href="#m1"
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-8 py-4 text-[15px] font-bold text-[#0F172A] transition-all duration-300 hover:border-black/20 hover:shadow-md"
@@ -378,7 +379,13 @@ export default function EkosistemPage() {
                 </div>
 
                 <Link
-                  href="/kayit-ol"
+                  href={buildPackageSignupHref(`M365 ${plan.range}`, m1Period === "monthly" ? plan.monthly : plan.yearly, {
+                    label: `M365 ${plan.range}`,
+                    source: "Ekosistem sayfasından seçildi",
+                    term: m1Period === "monthly" ? "Aylık plan" : "Yıllık plan",
+                    description: "Microsoft 365 ile ekip e-posta, dosya paylaşımı ve toplantı akışını merkezi hale getirin.",
+                    features: plan.features,
+                  })}
                   className={`mt-6 inline-flex w-full items-center justify-center rounded-full px-4 py-3 text-[13px] font-bold transition-all duration-300 hover:scale-[1.02] ${
                     plan.popular
                       ? "bg-[#1B98D5] text-white shadow-sm"

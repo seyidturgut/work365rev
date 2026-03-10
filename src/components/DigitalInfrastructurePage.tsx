@@ -19,6 +19,7 @@ import {
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Breadcrumb from "@/components/Breadcrumb";
+import { buildPackageSignupHref } from "@/lib/pricing";
 
 /* ─── DATA ─── */
 
@@ -360,7 +361,18 @@ export default function DigitalInfrastructurePage() {
                 </div>
 
                 <Link
-                  href="/kayit-ol"
+                  href={buildPackageSignupHref(`e-İmza ${plan.duration}`, plan.price, {
+                    label: `e-İmza ${plan.duration}`,
+                    source: "Dijital Altyapı sayfasından seçildi",
+                    term: `${plan.duration} paket`,
+                    description: "Nitelikli elektronik sertifika ile resmi giriş, beyanname ve sözleşme imza süreçlerini başlatın.",
+                    features: [
+                      "E-Tuğra Nitelikli Elektronik Sertifika",
+                      "e-Devlet, MERSIS, GİB portal girişi",
+                      "Sözleşme ve beyanname imzalama",
+                      "USB token ile güvenli kullanım",
+                    ],
+                  })}
                   className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[14px] font-bold transition-all duration-300 hover:scale-[1.02]"
                   style={{
                     backgroundColor: plan.savings ? plan.tagColor : "transparent",
@@ -427,7 +439,17 @@ export default function DigitalInfrastructurePage() {
                 <p className="mt-4 text-[13px] leading-6 text-[#475569]">{plan.target}</p>
 
                 <Link
-                  href="/kayit-ol"
+                  href={buildPackageSignupHref(`KEP ${plan.name}`, kepPeriod === "1y" ? plan.price1Y : plan.price3Y, {
+                    label: `KEP ${plan.name}`,
+                    source: "Dijital Altyapı sayfasından seçildi",
+                    term: kepPeriod === "1y" ? "1 yıllık paket" : "3 yıllık paket",
+                    description: plan.target,
+                    features: [
+                      `${kepPeriod === "1y" ? "1 yıllık" : "3 yıllık"} kullanım`,
+                      "1 yetkili",
+                      `Ek yetkili: ${plan.extraAuth}/kişi`,
+                    ],
+                  })}
                   className={`mt-5 inline-flex w-full items-center justify-center rounded-full px-4 py-3 text-[13px] font-bold transition-all duration-300 hover:scale-[1.02] ${
                     plan.featured
                       ? "bg-[#B37A08] text-white shadow-sm"
@@ -516,7 +538,18 @@ export default function DigitalInfrastructurePage() {
                 </div>
 
                 <Link
-                  href="/kayit-ol"
+                  href={buildPackageSignupHref(plan.name, bundlePeriod === "1y" ? plan.price1Y : plan.price3Y, {
+                    label: plan.name,
+                    source: "Dijital Altyapı sayfasından seçildi",
+                    term: bundlePeriod === "1y" ? "1 yıllık bundle" : "3 yıllık bundle",
+                    description: plan.uxValue,
+                    features: [
+                      "E-Tuğra Nitelikli e-İmza (USB Token)",
+                      `KEP hesabı (${plan.subtitle})`,
+                      "e-Devlet, MERSIS, GİB entegrasyonu",
+                      "Tek form ile başvuru",
+                    ],
+                  })}
                   className={`mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[14px] font-bold transition-all duration-300 hover:scale-[1.02] ${
                     plan.popular
                       ? "bg-[#7C3AED] text-white shadow-[0_8px_30px_rgba(124,58,237,0.3)]"

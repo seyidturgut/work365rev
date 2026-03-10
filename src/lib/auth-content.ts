@@ -15,31 +15,31 @@ export const authSlides: readonly AuthSlide[] = [
     id: "startup-team",
     image: "/auth-startup-team.jpg",
     badge: "WORK365 KURUCU PAKETİ",
-    eyebrow: "EKİPÇE BAŞLAMAK İSTEYENLERE",
-    title: "Kurucu ekibinizle aynı masada, aynı akışta ve daha düzenli bir başlangıç yapın.",
+    eyebrow: "AYNI MASADA, AYNI HEDEFTE",
+    title: "Kurucu ekibinizle birlikte çalışırken şirketleşme sürecini tek akışta yönetin.",
     description:
-      "Şirketleşme, evrak ve dijital kurulum adımlarını ekip içinde dağılmadan, tek panel mantığında ilerletin.",
-    caption: "Kurucu ekip için daha toplu ve görünür bir başlangıç akışı.",
+      "Laptop başındaki ekibiniz için başvuru, evrak ve dijital kurulum adımlarını tek merkezde toplayan daha düzenli bir başlangıç deneyimi.",
+    caption: "Kurucu ekip için daha toplu ve koordineli bir başlangıç akışı.",
   },
   {
     id: "modern-office",
     image: "/auth-modern-office.jpg",
     badge: "WORK365 BÜYÜME PAKETİ",
-    eyebrow: "OFİS DÜZENİNE YAKIŞAN AKIŞ",
-    title: "Dağınık belgeler yerine daha temiz, sakin ve düzenli bir çalışma ritmi kurun.",
+    eyebrow: "MODERN OFİSE UYGUN DÜZEN",
+    title: "Modern ofis düzenine yakışan temiz, sakin ve kontrollü bir operasyon zemini kurun.",
     description:
-      "Muhasebe, başvuru ve dijital altyapı adımlarını aynı düzende toplayarak işinizi kontrollü bir zeminde başlatın.",
-    caption: "Modern ekipler için daha okunabilir bir operasyon düzeni.",
+      "Muhasebe, başvuru ve dijital altyapı adımlarını tek düzende toplayarak işinizi daha derli toplu bir ofis ritmiyle başlatın.",
+    caption: "Daha temiz ofis hissi, daha okunabilir operasyon akışı.",
   },
   {
     id: "growth-meeting",
     image: "/auth-growth-meeting.jpg",
     badge: "WORK365 EKİP PAKETİ",
-    eyebrow: "BÜYÜME TOPLANTILARINA UYGUN ALTYAPI",
-    title: "Ekip büyürken toplantı masasındaki kararları operasyon tarafında da karşılık bulan bir düzene taşıyın.",
+    eyebrow: "PLANLAMA TOPLANTILARINA UYGUN ALTYAPI",
+    title: "Toplantı masasındaki planları operasyon tarafında da karşılığı olan net bir düzene dönüştürün.",
     description:
-      "Şirket kuruluşu, e-İmza, KEP ve ilk operasyon adımlarını büyüme hedeflerinize uygun tek bir deneyimde bir araya getirin.",
-    caption: "Büyüme konuşulurken arka ofis tarafı eksik kalmasın.",
+      "Workshop, planlama ve ekip toplantıları yapılırken şirket kuruluşu, e-İmza ve ilk operasyon adımları da aynı netlikte ilerlesin.",
+    caption: "Toplantı odasında konuşulanlar operasyon tarafında da yerini bulsun.",
   },
 ] as const;
 
