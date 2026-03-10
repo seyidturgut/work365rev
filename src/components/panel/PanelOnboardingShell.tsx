@@ -227,10 +227,15 @@ export default function PanelOnboardingShell({ initialUser }: PanelOnboardingShe
       <div className="grid min-h-screen grid-cols-1 lg:grid-cols-[minmax(300px,34vw)_1fr]">
         <section className="relative hidden lg:flex lg:flex-col lg:justify-between lg:border-r lg:border-black/6 lg:bg-[#0F172A] lg:px-10 lg:py-10 lg:text-white">
           <div>
-            <Link href="/" className="inline-flex items-center gap-2 text-[14px] font-medium text-white/74 transition-colors hover:text-white">
-              <ChevronLeft className="h-4 w-4" />
-              Ana sayfa
+            <Link href="/" className="inline-flex">
+              <Image src="/LOGO-END.svg" alt="Work365" width={132} height={36} className="h-9 w-auto" />
             </Link>
+            <div className="mt-5">
+              <Link href="/" className="inline-flex items-center gap-2 text-[14px] font-medium text-white/74 transition-colors hover:text-white">
+                <ChevronLeft className="h-4 w-4" />
+                Ana sayfa
+              </Link>
+            </div>
             <p className="mt-10 text-[12px] uppercase tracking-[0.3em] text-[#7DD3FC]">Kuruluş Akışı</p>
             <h1 className="mt-4 max-w-[10ch] text-[52px] font-bold leading-[0.94] tracking-[-0.06em] text-white">
               Kuruluş sürecini adım adım netleştiriyoruz.
@@ -416,7 +421,7 @@ export default function PanelOnboardingShell({ initialUser }: PanelOnboardingShe
                   <button
                     type="submit"
                     disabled={isSaving}
-                    className="inline-flex items-center gap-2 rounded-full bg-[#0F172A] px-6 py-3.5 text-[15px] font-semibold text-white transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-[#0F172A] px-6 py-3.5 text-[15px] font-semibold text-white transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {isSaving ? "Kaydediliyor..." : activeStepId === "activityArea" ? "Ödemeye geç" : "Devam Et"}
                     <ArrowRight className="h-4 w-4" />

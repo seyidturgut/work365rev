@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, BadgeCheck, CreditCard, FileStack, FolderKanban, LayoutDashboard, LogOut, Sparkles, UserCircle2 } from "lucide-react";
@@ -44,10 +45,14 @@ export default function PanelDashboardShell({ user }: PanelDashboardShellProps) 
           initial={{ x: -48, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.45, ease: "easeOut" }}
-          className="relative flex flex-col justify-between bg-[#0F172A] px-6 py-8 text-white lg:px-7"
+          className="relative flex flex-col bg-[#0F172A] px-6 py-8 text-white lg:px-7"
         >
           <div>
-            <div className="rounded-[28px] border border-white/10 bg-white/8 p-5 backdrop-blur-sm">
+            <Link href="/" className="inline-flex">
+              <Image src="/LOGO-END.svg" alt="Work365" width={144} height={40} className="h-10 w-auto" />
+            </Link>
+
+            <div className="mt-6 rounded-[28px] border border-white/10 bg-white/8 p-5 backdrop-blur-sm">
               <p className="text-[12px] uppercase tracking-[0.24em] text-[#7DD3FC]">Work365 Panel</p>
               <p className="mt-3 text-[26px] font-bold tracking-[-0.05em]">{user.fullName}</p>
               <p className="mt-2 text-[14px] text-white/70">{user.email}</p>
@@ -69,12 +74,11 @@ export default function PanelDashboardShell({ user }: PanelDashboardShellProps) 
                 </Link>
               ))}
             </nav>
-          </div>
-
-          <div className="rounded-[28px] border border-white/10 bg-white/8 p-5">
-            <p className="text-[11px] uppercase tracking-[0.22em] text-[#7DD3FC]">Paket</p>
-            <p className="mt-3 text-[22px] font-semibold tracking-[-0.04em]">{user.selectedPackage?.label || "Henüz seçilmedi"}</p>
-            <p className="mt-3 text-[14px] text-white/72">{user.selectedPackage?.priceLabel || "Teklif sırasında netleşecek"}</p>
+            <div className="mt-6 rounded-[28px] border border-white/10 bg-white/8 p-5">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-[#7DD3FC]">Paket</p>
+              <p className="mt-3 text-[22px] font-semibold tracking-[-0.04em]">{user.selectedPackage?.label || "Henüz seçilmedi"}</p>
+              <p className="mt-3 text-[14px] text-white/72">{user.selectedPackage?.priceLabel || "Teklif sırasında netleşecek"}</p>
+            </div>
           </div>
         </motion.aside>
 
@@ -114,17 +118,18 @@ export default function PanelDashboardShell({ user }: PanelDashboardShellProps) 
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0 },
                 }}
+                className="h-full"
               >
                 <Link
                   href={action.href}
-                  className="block rounded-[30px] border border-[#DCE7F1] bg-white p-6 shadow-[0_24px_70px_rgba(15,23,42,0.06)] transition-transform hover:-translate-y-1"
+                  className="flex h-full flex-col rounded-[30px] border border-[#DCE7F1] bg-white p-6 shadow-[0_24px_70px_rgba(15,23,42,0.06)] transition-transform hover:-translate-y-1"
                 >
                   <div className="inline-flex rounded-full bg-[#F0F9FF] p-3 text-[#1B98D5]">
                     <Sparkles className="h-5 w-5" />
                   </div>
                   <p className="mt-5 text-[22px] font-semibold tracking-[-0.04em] text-[#0F172A]">{action.title}</p>
                   <p className="mt-3 text-[15px] leading-7 text-[#64748B]">{action.description}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-[#1B98D5]">
+                  <span className="mt-auto pt-5 inline-flex items-center gap-2 text-[14px] font-semibold text-[#1B98D5]">
                     Aç
                     <ArrowRight className="h-4 w-4" />
                   </span>

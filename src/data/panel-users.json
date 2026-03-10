@@ -451,6 +451,124 @@
       "eTugraStatus": "idle",
       "createdAt": "2026-03-10T00:23:12.999Z",
       "updatedAt": "2026-03-10T00:23:21.596Z"
+    },
+    {
+      "id": "5dae3da1-ad6f-4660-8986-364be3a84ee9",
+      "email": "google-demo-1773102726194@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "sahis-sirketi",
+        "label": "Şahıs Şirketi",
+        "price": 4500,
+        "priceLabel": "4.500 TL",
+        "source": null,
+        "term": null,
+        "detailLabel": "Seçilen paket",
+        "description": null,
+        "features": []
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "sahis-sirketi",
+            "label": "Şahıs Şirketi",
+            "locked": true,
+            "confirmed": true
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": "be"
+          },
+          "activityArea": {
+            "value": "e"
+          }
+        }
+      },
+      "payment": {
+        "status": "paid",
+        "currentStep": 7,
+        "cardHolderName": "Google Demo Kullanıcısı",
+        "cardLast4": "1000",
+        "invoice": {
+          "companyTitle": "Şahıs Şirketi",
+          "taxNumber": "123456",
+          "address": "dcsdv",
+          "city": "ca"
+        },
+        "paidAt": "2026-03-10T00:32:55.682Z"
+      },
+      "eTugraStatus": "triggered",
+      "createdAt": "2026-03-10T00:32:06.194Z",
+      "updatedAt": "2026-03-10T00:32:55.682Z"
+    },
+    {
+      "id": "44b4326b-759a-468d-8507-b46de47b72fe",
+      "email": "google-demo-1773102981490@work365.local",
+      "password": "google-demo",
+      "fullName": "Seyid Turgut",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "limited-sirketi",
+        "label": "Limited Şirketi",
+        "price": 7500,
+        "priceLabel": "7.500 TL",
+        "source": null,
+        "term": null,
+        "detailLabel": "Seçilen paket",
+        "description": null,
+        "features": []
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "limited-sirketi",
+            "label": "Limited Şirketi",
+            "locked": true,
+            "confirmed": true
+          },
+          "fullName": {
+            "value": "Seyid Turgut"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": "Beyincik"
+          },
+          "activityArea": {
+            "value": "Yazılım"
+          }
+        }
+      },
+      "payment": {
+        "status": "paid",
+        "currentStep": 7,
+        "cardHolderName": "Seyid Turgut",
+        "cardLast4": "1000",
+        "invoice": {
+          "companyTitle": "Beyincik İşler",
+          "taxNumber": "1234567",
+          "address": "v",
+          "city": "Kocaeli"
+        },
+        "paidAt": "2026-03-10T00:40:21.973Z"
+      },
+      "eTugraStatus": "triggered",
+      "createdAt": "2026-03-10T00:36:21.490Z",
+      "updatedAt": "2026-03-10T00:40:21.973Z"
     }
   ]
 }
