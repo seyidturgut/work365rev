@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { PANEL_SESSION_COOKIE } from "@/lib/panel-session";
+import { setPanelSessionCookies } from "@/lib/panel-session";
 import { createOrGetGoogleDemoUser, loginUser } from "@/lib/panel-store";
 
 type LoginPayload = {
@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     const body = (await request.json()) as LoginPayload;
     const user =
       body.provider === "google"
-        ? await createOrGetGoogleDemoUser()
+        ? await createOrGetGoogleDemoUser(body.selectedPackage)
         : await loginUser({
             email: body.email?.trim().toLowerCase() ?? "",
             password: body.password ?? "",
@@ -36,12 +36,7 @@ export async function POST(request: Request) {
           : "/panel/payment"
         : "/panel";
     const response = NextResponse.json({ ok: true, redirectTo, user });
-    response.cookies.set(PANEL_SESSION_COOKIE, user.id, {
-      httpOnly: true,
-      sameSite: "lax",
-      path: "/",
-      maxAge: 60 * 60 * 24 * 30,
-    });
+    setPanelSessionCookies(response, user);
     return response;
   } catch (error) {
     const message = error instanceof Error ? error.message : "Giris sirasinda bir hata olustu.";

@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { getSessionUserId } from "@/lib/panel-session";
+import { getSessionUserId, getSessionUserState, setPanelSessionCookies } from "@/lib/panel-session";
 import { updateOnboardingStep } from "@/lib/panel-store";
 import type { WizardStepId } from "@/lib/panel-types";
 
@@ -15,8 +15,9 @@ export async function POST(request: Request) {
   try {
     const cookieStore = await cookies();
     const userId = getSessionUserId(cookieStore);
+    const sessionUser = getSessionUserState(cookieStore);
 
-    if (!userId) {
+    if (!userId && !sessionUser) {
       return NextResponse.json({ error: "Oturum bulunamadi." }, { status: 401 });
     }
 
@@ -27,14 +28,16 @@ export async function POST(request: Request) {
     }
 
     const user = await updateOnboardingStep({
-      userId,
+      userId: userId || sessionUser!.id,
       stepId: body.stepId,
       values: body.values,
       nextStep: body.nextStep,
       markCompleted: body.markCompleted,
     });
 
-    return NextResponse.json({ ok: true, user });
+    const response = NextResponse.json({ ok: true, user });
+    setPanelSessionCookies(response, user);
+    return response;
   } catch (error) {
     const message = error instanceof Error ? error.message : "Onboarding kaydi basarisiz oldu.";
     return NextResponse.json({ error: message }, { status: 400 });

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { PANEL_SESSION_COOKIE } from "@/lib/panel-session";
+import { setPanelSessionCookies } from "@/lib/panel-session";
 import { signupUser } from "@/lib/panel-store";
 
 type SignupPayload = {
@@ -39,12 +39,7 @@ export async function POST(request: Request) {
     });
 
     const response = NextResponse.json({ ok: true, redirectTo: "/panel", user });
-    response.cookies.set(PANEL_SESSION_COOKIE, user.id, {
-      httpOnly: true,
-      sameSite: "lax",
-      path: "/",
-      maxAge: 60 * 60 * 24 * 30,
-    });
+    setPanelSessionCookies(response, user);
 
     return response;
   } catch (error) {

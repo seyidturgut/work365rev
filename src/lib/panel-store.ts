@@ -331,7 +331,7 @@ function createUserRecord(input: SignupInput): PanelUser {
   };
 }
 
-export async function createOrGetGoogleDemoUser() {
+export async function createOrGetGoogleDemoUser(selectedPackageInput?: PackageInput | null) {
   const store = await readStore();
   const email = `google-demo-${Date.now()}@work365.local`;
   const user = createUserRecord({
@@ -339,6 +339,7 @@ export async function createOrGetGoogleDemoUser() {
     email,
     phone: "0555 000 00 00",
     password: "google-demo",
+    selectedPackage: selectedPackageInput,
   });
   store.users.push(user);
   await writeStore(store);
