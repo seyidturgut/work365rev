@@ -343,8 +343,8 @@
       "selectedPackage": {
         "companySlug": "anonim-sirketi",
         "label": "Anonim Şirketi",
-        "price": null,
-        "priceLabel": "Teklif sırasında netleşecek",
+        "price": 12500,
+        "priceLabel": "12.500 TL",
         "source": null,
         "term": null,
         "detailLabel": "Seçilen paket",
@@ -392,6 +392,65 @@
       "eTugraStatus": "triggered",
       "createdAt": "2026-03-10T00:10:47.480Z",
       "updatedAt": "2026-03-10T00:11:37.669Z"
+    },
+    {
+      "id": "62061182-571b-4ba1-97ba-3c81003dd0b5",
+      "email": "google-demo-1773102192999@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "anonim-sirketi",
+        "label": "Anonim Şirketi",
+        "price": 12500,
+        "priceLabel": "12.500 TL",
+        "source": null,
+        "term": null,
+        "detailLabel": "Seçilen paket",
+        "description": null,
+        "features": []
+      },
+      "wizard": {
+        "currentStep": 3,
+        "completedStep": 2,
+        "status": "in_progress",
+        "answers": {
+          "package": {
+            "companySlug": "anonim-sirketi",
+            "label": "Anonim Şirketi",
+            "locked": true,
+            "confirmed": true
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": ""
+          },
+          "activityArea": {
+            "value": ""
+          }
+        }
+      },
+      "payment": {
+        "status": "pending",
+        "currentStep": 1,
+        "cardHolderName": "",
+        "cardLast4": "",
+        "invoice": {
+          "companyTitle": "",
+          "taxNumber": "",
+          "address": "",
+          "city": ""
+        },
+        "paidAt": null
+      },
+      "eTugraStatus": "idle",
+      "createdAt": "2026-03-10T00:23:12.999Z",
+      "updatedAt": "2026-03-10T00:23:21.596Z"
     }
   ]
 }
