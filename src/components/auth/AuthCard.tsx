@@ -262,17 +262,19 @@ export default function AuthCard({ initialMode, selectedPackage }: AuthCardProps
         </Link>
       </div>
 
-      <div className="mb-6 flex flex-col items-center text-center">
-        <Image src="/LOGO-END.svg" alt="Work365" width={150} height={40} className="h-10 w-auto" />
-        <h2 className="mt-6 text-[34px] font-bold tracking-[-0.04em] text-[#0F172A] sm:text-[38px]">
-          Hoş Geldiniz
-        </h2>
-        <p className="mt-3 max-w-xl text-[15px] leading-7 text-[#64748B] sm:text-[16px]">
+      <div className="mb-5">
+        <div className="flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:gap-4">
+          <Image src="/LOGO-END.svg" alt="Work365" width={150} height={40} className="h-10 w-auto" />
+          <h2 className="text-[30px] font-bold tracking-[-0.04em] text-[#0F172A] sm:text-[34px]">
+            Hoş Geldiniz
+          </h2>
+        </div>
+        <p className="mt-3 text-center text-[15px] leading-7 text-[#64748B] sm:text-[16px]">
           Work365 ile şirket kuruluşunu, dijital altyapınızı ve ilk operasyon adımlarınızı tek akışta yönetin.
         </p>
       </div>
 
-      <div className="mb-6 grid grid-cols-2 rounded-full bg-[#EEF3F8] p-1">
+      <div className="mb-5 grid grid-cols-2 rounded-full bg-[#EEF3F8] p-1">
         {[
           { key: "login", label: "Giriş Yap" },
           { key: "signup", label: "Üye Ol" },
@@ -293,41 +295,28 @@ export default function AuthCard({ initialMode, selectedPackage }: AuthCardProps
       </div>
 
       {selectedPackage && isPackageVisible ? (
-        <div className="mb-5 rounded-[22px] border border-[#D9E6F2] bg-[#F7FBFF] px-4 py-3.5">
-          <div className="flex items-center justify-between gap-4">
+        <div className="mb-3 rounded-[16px] border border-[#D9E6F2] bg-[#F7FBFF] px-3.5 py-2.5">
+          <div className="flex items-center justify-between gap-2.5">
             <div className="min-w-0">
-              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#1B98D5]">
+              <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#1B98D5]">
                 Seçtiğiniz Paket
               </p>
-              <p className="mt-3 text-[16px] font-bold text-[#0F172A]">{selectedPackage.company}</p>
-              <p className="mt-1 text-[13px] text-[#64748B]">{selectedPackage.detailLabel}</p>
-              {selectedPackage.description ? (
-                <p className="mt-2 max-w-xl text-[13px] leading-6 text-[#475569]">{selectedPackage.description}</p>
-              ) : null}
-              {selectedPackage.features.length > 0 ? (
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {selectedPackage.features.slice(0, 3).map((feature) => (
-                    <span
-                      key={feature}
-                      className="rounded-full bg-white px-2.5 py-1 text-[12px] text-[#334155] ring-1 ring-black/6"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
+              <div className="mt-1 flex flex-wrap items-center gap-1.5">
+                <p className="truncate text-[14px] font-bold text-[#0F172A]">{selectedPackage.company}</p>
+                <span className="rounded-full bg-white px-2.5 py-1 text-[11px] font-bold text-[#0F172A] ring-1 ring-black/6">
+                  {selectedPackage.priceLabel}
+                </span>
+              </div>
+              <p className="mt-0.5 truncate text-[11px] text-[#64748B]">{selectedPackage.detailLabel}</p>
             </div>
             <div className="flex shrink-0 items-center gap-2 self-start">
-              <span className="rounded-full bg-white px-3 py-2 text-[13px] font-bold text-[#0F172A] ring-1 ring-black/6">
-                {selectedPackage.priceLabel}
-              </span>
               <button
                 type="button"
                 onClick={dismissSelectedPackage}
                 aria-label="Seçilen paketi kaldır"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#64748B] ring-1 ring-black/6 transition-colors hover:text-[#DC2626]"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#64748B] ring-1 ring-black/6 transition-colors hover:text-[#DC2626]"
               >
-                <Trash2 className="h-4 w-4" />
+                <Trash2 className="h-3.5 w-3.5" />
               </button>
             </div>
           </div>
