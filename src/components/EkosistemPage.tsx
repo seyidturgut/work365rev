@@ -260,9 +260,9 @@ export default function EkosistemPage() {
               {/* Floating highlights */}
               <div className="hidden flex-col justify-center gap-4 lg:flex">
                 {[
-                  { icon: Laptop, label: "M1", value: "Dijital Ofis & IT" },
-                  { icon: Globe, label: "M2", value: "Web & Dijital Varlık" },
-                  { icon: Megaphone, label: "M3", value: "Sosyal Medya" },
+                  { icon: Laptop, label: "Dijital Ofis & IT", value: "Microsoft 365" },
+                  { icon: Globe, label: "Web & Dijital Varlık", value: "Profesyonel site" },
+                  { icon: Megaphone, label: "Sosyal Medya", value: "İçerik yönetimi" },
                 ].map((stat) => (
                   <div
                     key={stat.label}
@@ -326,7 +326,7 @@ export default function EkosistemPage() {
         <div className="mx-auto max-w-[1230px]">
           <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-[720px]">
-              <SectionTag color="#1B98D5">M1 — Dijital Ofis & IT Yönetimi</SectionTag>
+              <SectionTag color="#1B98D5">Dijital Ofis & IT Yönetimi</SectionTag>
               <h2 className="mt-4 text-[32px] font-extrabold tracking-[-0.04em] text-[#0F172A] md:text-[44px]">
                 Microsoft 365 ile ekibinizi dijital ofise taşıyın.
               </h2>
@@ -404,7 +404,7 @@ export default function EkosistemPage() {
       <section id="m2" className="px-6 py-14">
         <div className="mx-auto max-w-[1230px]">
           <div className="mb-10 max-w-[720px]">
-            <SectionTag color="#B37A08">M2 — Web Sitesi & Dijital Varlık</SectionTag>
+            <SectionTag color="#B37A08">Web Sitesi & Dijital Varlık</SectionTag>
             <h2 className="mt-4 text-[32px] font-extrabold tracking-[-0.04em] text-[#0F172A] md:text-[44px]">
               Profesyonel web sitenizi kurun, dijitalde güçlü bir şekilde var olun.
             </h2>
@@ -477,7 +477,7 @@ export default function EkosistemPage() {
       <section id="m3" className="px-6 py-14">
         <div className="mx-auto max-w-[1230px]">
           <div className="mb-10 max-w-[720px]">
-            <SectionTag color="#E11D48">M3 — Sosyal Medya & İçerik Yönetimi</SectionTag>
+            <SectionTag color="#E11D48">Sosyal Medya & İçerik Yönetimi</SectionTag>
             <h2 className="mt-4 text-[32px] font-extrabold tracking-[-0.04em] text-[#0F172A] md:text-[44px]">
               Markanızı sosyal medyada profesyonelce büyütün.
             </h2>
@@ -565,8 +565,8 @@ export default function EkosistemPage() {
               answer="Her modül bağımsızdır — sadece ihtiyacınız olan modülü seçebilirsiniz. Birden fazla modül aldığınızda tümü Work365 panelinden tek yerden yönetilir. Paket indirimi için satış ekibimizle iletişime geçebilirsiniz."
             />
             <FaqItem
-              question="M1 — Dijital Ofis paketinde lisanslar dahil mi?"
-              answer="Evet, tüm M1 paketlerinde Microsoft 365 Business lisansları dahildir. Kurulum, kullanıcı yönetimi, e-posta konfigürasyonu ve teknik destek Piri Dijital operasyonel güvencesiyle sağlanır. Ek lisans veya gizli maliyet yoktur."
+              question="Dijital Ofis paketinde lisanslar dahil mi?"
+              answer="Evet, tüm Dijital Ofis paketlerinde Microsoft 365 Business lisansları dahildir. Kurulum, kullanıcı yönetimi, e-posta konfigürasyonu ve teknik destek Piri Dijital operasyonel güvencesiyle sağlanır. Ek lisans veya gizli maliyet yoktur."
             />
             <FaqItem
               question="Web sitesi kurulumundan sonra değişiklik yapabilir miyim?"
@@ -578,7 +578,7 @@ export default function EkosistemPage() {
             />
             <FaqItem
               question="Yıllık taahhütte indirim var mı?"
-              answer="M1 Dijital Ofis modülünde yıllık taahhütle %15'e varan indirim uygulanır. Diğer modüller için yıllık ödeme planları ve özel teklifler satış ekibimiz tarafından sunulabilir."
+              answer="Dijital Ofis modülünde yıllık taahhütle %15'e varan indirim uygulanır. Diğer modüller için yıllık ödeme planları ve özel teklifler satış ekibimiz tarafından sunulabilir."
             />
           </div>
         </div>

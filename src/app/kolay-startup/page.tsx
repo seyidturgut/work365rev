@@ -572,38 +572,59 @@ export default function KolayStartupPage() {
               </motion.p>
             </motion.div>
 
+            {/* Kur bilgisi + IP notu */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeUp}
+              custom={3}
+              className="flex flex-wrap items-center gap-4 mb-8"
+            >
+              <span className="inline-flex items-center gap-2 bg-white border border-[#E5EEF8] text-[#1b98d5] text-[13px] font-bold px-4 py-2 rounded-full shadow-sm">
+                Dövize endeksli · ~35 TL/$
+              </span>
+              <span className="inline-flex items-center gap-2 bg-white border border-[#E5EEF8] text-[#545454] text-[13px] px-4 py-2 rounded-full shadow-sm">
+                %100 Piri Dijital IP — KolayStartup A.Ş. lisans alır, hisse verilmez
+              </span>
+            </motion.div>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
               {[
                 {
                   name: "Fikir Aşaması",
-                  desc: "İlk görünürlük ve temel araçlar",
+                  usd: "$99",
+                  desc: "Fikri kanıtla, görünür ol",
                   price: "₺3.465",
-                  features: ["Profil oluşturma", "AI pitch değerlendirme", "Temel dashboard erişimi", "Mentor görünürlüğü"],
+                  features: ["Profil oluşturma & görünürlük", "AI pitch değerlendirme", "İş Modeli Kanovas (BMC)", "Cap Table simülatörü", "Mentor görünürlüğü", "Temel dashboard"],
                   featured: false,
                   delay: 0,
                 },
                 {
                   name: "MVP Geliştirme",
-                  desc: "Yatırımcı görünürlüğü ve analitik",
+                  usd: "$199",
+                  desc: "Yatırımcıya sun, ekip kur",
                   price: "₺6.965",
-                  features: ["KolayJob & KolayTeam erişimi", "Gelişmiş analitik", "Öncelikli destek", "Mentor ve danışman erişimi"],
+                  features: ["KolayJob & KolayTeam erişimi", "Pitch Deck şablonları", "Veri Odası (Data Room)", "Gelişmiş analitik", "Öncelikli destek", "Mentor ve danışman erişimi"],
                   featured: true,
                   badge: "En Popüler",
                   delay: 1,
                 },
                 {
                   name: "Piyasaya Sürüldü",
+                  usd: "$299",
                   desc: "Ürün pazarda, büyüme hedefli",
                   price: "₺10.465",
-                  features: ["API erişimi", "2. el hisse satışı", "Gelişmiş eşleştirme", "SPK ve hukuki danışman erişimi"],
+                  features: ["SAFE/Nota yönetimi", "Dinamik değerleme hesabı", "Gelişmiş yatırımcı eşleştirme", "SPK ve hukuki danışman erişimi", "Demo Day erişimi"],
                   featured: false,
                   delay: 2,
                 },
                 {
-                  name: "Kurumsal",
+                  name: "Büyüme",
+                  usd: "$499",
                   desc: "Ölçeklenen girişimler için",
                   price: "₺17.465",
-                  features: ["Medya / PR görünürlüğü", "Özel hesap yöneticisi", "Özel danışmanlık erişimi", "Gelişmiş destek seviyesi"],
+                  features: ["VC/CVC köprüsü", "SPK hazırlık desteği", "MENA erişimi", "Medya / PR görünürlüğü", "Özel hesap yöneticisi", "Demo Day öncelikli katılım"],
                   featured: false,
                   delay: 3,
                 },
@@ -632,16 +653,17 @@ export default function KolayStartupPage() {
                   <p className={`text-[13px] mb-5 ${plan.featured ? "text-white/60" : "text-Work365-text"}`}>
                     {plan.desc}
                   </p>
-                  <div className={`text-[34px] font-bold tracking-tighter mb-1 ${plan.featured ? "text-white" : "text-black"}`}>
+                  <div className={`text-[34px] font-bold tracking-tighter mb-0.5 ${plan.featured ? "text-white" : "text-black"}`}>
                     {plan.price}
                   </div>
-                  <p className={`text-[13px] mb-6 ${plan.featured ? "text-white/50" : "text-Work365-text"}`}>/ ay</p>
+                  <p className={`text-[12px] mb-1 ${plan.featured ? "text-white/50" : "text-Work365-text"}`}>/ ay</p>
+                  <p className={`text-[12px] font-semibold mb-5 ${plan.featured ? "text-[#7DD3FC]" : "text-[#1b98d5]"}`}>
+                    {plan.usd}/ay USD
+                  </p>
                   <ul className="space-y-2 flex-1 mb-6">
                     {plan.features.map((f) => (
                       <li key={f} className="flex items-center gap-2.5">
-                        <CheckCircle2
-                          className={`w-4 h-4 flex-shrink-0 ${plan.featured ? "text-[#1b98d5]" : "text-[#1b98d5]"}`}
-                        />
+                        <CheckCircle2 className="w-4 h-4 flex-shrink-0 text-[#1b98d5]" />
                         <span className={`text-[13px] ${plan.featured ? "text-white/80" : "text-Work365-text"}`}>{f}</span>
                       </li>
                     ))}

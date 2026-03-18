@@ -45,9 +45,6 @@ export async function POST(request: Request) {
         return NextResponse.json({ error: "Kart bilgilerini eksiksiz girin." }, { status: 400 });
       }
 
-      if (!invoice.companyTitle || !invoice.taxNumber || !invoice.address || !invoice.city) {
-        return NextResponse.json({ error: "Fatura bilgilerini eksiksiz girin." }, { status: 400 });
-      }
     }
 
     if (sessionUser) {
