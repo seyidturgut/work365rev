@@ -133,38 +133,47 @@ const benefits = [
 const ecosystemModules = [
   {
     code: "M1",
-    name: "Dijital Ofis (IT)",
-    aLaCarte: "10k–30k",
-    package: "~15% ↓",
-    model: "Kullanıcı sayısı",
-    description: "Microsoft 365 lisans, kurulum ve yönetimi tek pakette. Küçük ekipten kurumsal yapıya kadar ölçeklenir.",
+    name: "Dijital Ofis (Microsoft 365)",
+    aLaCarte: "10k–30k TL/ay",
+    package: "~%15 ↓",
+    model: "0–10 / 10–50 / 50–299 / 300+ kullanıcı",
+    description: "Microsoft 365 lisans, kurulum ve yönetimi tek pakette. 0–10 kullanıcı 10.000 TL/ay'dan başlar, 300+ için teklif bazlı.",
     color: "text-[#0F8FA3]",
   },
   {
     code: "M2",
     name: "Web Sitesi",
-    aLaCarte: "500–5k",
-    package: "~15% ↓",
-    model: "Kurulum + bakım",
-    description: "Standart, WordPress ve KOBİ paketleriyle yayına hızlı çıkın; bakım ve güncellemeleri tek akışta yönetin.",
+    aLaCarte: "500–5.000 TL",
+    package: "~%15 ↓",
+    model: "Kurulum + aylık bakım",
+    description: "Serbest, İşletme ve Kurumsal paketleriyle hızlı yayına çıkın. Bakım ve güncellemeler dahil.",
     color: "text-[#2158D2]",
   },
   {
-    code: "M3",
-    name: "Sosyal Medya",
-    aLaCarte: "15k–35k",
-    package: "~15% ↓",
-    model: "İçerik seviyesi",
-    description: "Başlangıçtan büyüme paketine kadar içerik üretimi, planlama ve marka görünürlüğü tek modülde toplanır.",
+    code: "M2-sosyal",
+    name: "Sosyal Medya Yönetimi",
+    aLaCarte: "15k–35k TL/ay",
+    package: "%25 ↓ yıllık",
+    model: "Hf. 1 / 2 / 3 post",
+    description: "Başlangıç (15k) · Büyüme (25k) · Pro (35k). Yıllık ödemede %25 indirim. Enterprise için teklif alın.",
     color: "text-[#6638D6]",
+  },
+  {
+    code: "M3",
+    name: "Büyüme",
+    aLaCarte: "Yakında",
+    package: "—",
+    model: "Teklif bazlı",
+    description: "Tele satış, reklam yönetimi ve dönüşüm optimizasyonu. Operasyonel kapasite kurulduktan sonra fiyatlandırılacak.",
+    color: "text-[#9B6B2E]",
   },
   {
     code: "M4",
     name: "Kolay Startup",
-    aLaCarte: "3.465–17.465",
-    package: "~15% ↓",
-    model: "Dövize endeksli",
-    description: "Fikir aşamasından piyasaya çıkışa kadar startup yolculuğunu hızlandıran 4 kademeli büyüme kurgusu.",
+    aLaCarte: "$99–$499/ay",
+    package: "~%15 ↓",
+    model: "USD · ~35 TL/$",
+    description: "Fikir ($99) · MVP ($199) · Piyasaya Sürüldü ($299) · Büyüme ($499). Pitch Deck, Veri Odası, VC köprüsü, MENA erişimi.",
     color: "text-[#067A52]",
   },
 ] as const;
@@ -240,11 +249,40 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Platform Baz Bedeli */}
+      <section className="px-6 pb-4 pt-2">
+        <div className="mx-auto max-w-[1230px]">
+          <div className="flex flex-col items-start justify-between gap-4 rounded-[28px] border border-[#1b98d5]/20 bg-[#F0F9FF] px-6 py-5 sm:flex-row sm:items-center">
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#1b98d5] text-white">
+                <ShieldCheck className="h-6 w-6" />
+              </div>
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#1b98d5]">Zorunlu · Tüm Müşteriler</p>
+                <p className="mt-1 text-[18px] font-bold text-black">Platform Baz Bedeli</p>
+                <p className="mt-0.5 text-[14px] text-black/60">Aylık işletme ücreti — tüm hizmetlere erişim için gerekli</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-6 text-right">
+              <div>
+                <p className="text-[13px] font-semibold text-black/50">Aylık</p>
+                <p className="mt-1 text-[28px] font-bold tracking-[-0.04em] text-black">390 TL</p>
+              </div>
+              <div>
+                <p className="text-[13px] font-semibold text-[#1b98d5]">Yıllık · %30 İndirim</p>
+                <p className="mt-1 text-[28px] font-bold tracking-[-0.04em] text-black">275 TL<span className="text-[16px] text-black/50">/ay</span></p>
+                <p className="text-[12px] text-black/40">Toplam 3.300 TL/yıl</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="planlar" className="px-6 pb-12 pt-4">
         <div className="mx-auto max-w-[1230px]">
           <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-[14px] font-bold uppercase tracking-[0.12em] text-[#1b98d5]">Planlar</p>
+              <p className="text-[14px] font-bold uppercase tracking-[0.12em] text-[#1b98d5]">Şirket Kuruluşu</p>
               <h2 className="mt-3 text-[32px] font-bold tracking-[-0.04em] text-black md:text-[44px]">
                 Şirket tipine göre ne aldığınızı doğrudan karşılaştırın.
               </h2>
@@ -334,6 +372,147 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* M0 Ek Hizmetler */}
+      <section className="px-6 pb-12 pt-2">
+        <div className="mx-auto max-w-[1230px] rounded-[38px] bg-white px-6 py-8 shadow-sm ring-1 ring-black/5 md:px-8 md:py-10">
+          <p className="text-[14px] font-bold uppercase tracking-[0.12em] text-[#1b98d5]">M0 — Ek Hizmetler</p>
+          <h2 className="mt-3 text-[28px] font-bold tracking-[-0.04em] text-black md:text-[38px]">
+            Kuruluşa ek olarak ihtiyacınıza göre seçin.
+          </h2>
+          <p className="mt-3 text-[16px] leading-7 text-black/60">
+            Aşağıdaki hizmetler şirket kuruluş paketinize bağımsız olarak eklenebilir.
+          </p>
+
+          <div className="mt-8 space-y-6">
+
+            {/* e-İmza */}
+            <div>
+              <p className="mb-3 text-[15px] font-bold text-black">e-İmza (E-Tuğra Nitelikli)</p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                <div className="rounded-[22px] border border-[#DCE7F1] bg-[#F8FAFC] px-5 py-4">
+                  <p className="text-[15px] font-bold text-black">1 Yıllık</p>
+                  <p className="mt-1 text-[28px] font-bold tracking-[-0.04em] text-black">2.300 TL</p>
+                  <p className="mt-1 text-[13px] text-black/50">Yıllık 192 TL/ay karşılığı</p>
+                </div>
+                <div className="rounded-[22px] border-2 border-[#1b98d5] bg-[#F0F9FF] px-5 py-4">
+                  <div className="flex items-center justify-between">
+                    <p className="text-[15px] font-bold text-black">3 Yıllık</p>
+                    <span className="rounded-full bg-[#1b98d5] px-2.5 py-1 text-[11px] font-bold text-white">En iyi değer</span>
+                  </div>
+                  <p className="mt-1 text-[28px] font-bold tracking-[-0.04em] text-black">4.600 TL</p>
+                  <p className="mt-1 text-[13px] font-semibold text-[#1b98d5]">1.300 TL tasarruf · 128 TL/ay</p>
+                </div>
+              </div>
+            </div>
+
+            {/* KEP */}
+            <div>
+              <p className="mb-3 text-[15px] font-bold text-black">KEP — Kayıtlı Elektronik Posta</p>
+              <p className="mb-3 text-[13px] text-black/50">Ek yetkili: +99 TL/adet · Tüm paketlerde geçerli</p>
+              <div className="overflow-hidden rounded-[22px] ring-1 ring-[#DCE7F1]">
+                <div className="hidden bg-[#F8FAFC] md:grid md:grid-cols-4">
+                  {["Paket", "Kontör", "1 Yıl", "3 Yıl"].map((h) => (
+                    <div key={h} className="px-4 py-3 text-[13px] font-bold text-black/60">{h}</div>
+                  ))}
+                </div>
+                {[
+                  { name: "Başlangıç", kontor: "0 kontör", y1: "520 TL", y3: "1.215 TL" },
+                  { name: "Standart", kontor: "20 kontör", y1: "855 TL", y3: "1.550 TL" },
+                  { name: "Pro", kontor: "50 kontör", y1: "1.149 TL", y3: "1.844 TL" },
+                  { name: "Kurumsal", kontor: "100+ kontör", y1: "1.779 TL", y3: "2.474 TL" },
+                ].map((row, i) => (
+                  <div key={row.name} className={`md:grid md:grid-cols-4 ${i % 2 === 0 ? "bg-white" : "bg-[#FAFBFC]"} border-t border-[#DCE7F1]`}>
+                    <div className="px-4 py-3 text-[15px] font-bold text-black">{row.name}</div>
+                    <div className="px-4 py-3 text-[15px] text-black/60">{row.kontor}</div>
+                    <div className="px-4 py-3 text-[15px] font-semibold text-black">{row.y1}</div>
+                    <div className="px-4 py-3 text-[15px] font-semibold text-[#1b98d5]">{row.y3}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Muhasebe + Dijital Asistan yan yana */}
+            <div className="grid gap-6 lg:grid-cols-2">
+              {/* Muhasebe */}
+              <div>
+                <p className="mb-1 text-[15px] font-bold text-black">Online Muhasebe Danışmanlığı</p>
+                <p className="mb-3 text-[13px] text-black/50">2026 SMMM asgari tarifesinin %72 altında</p>
+                <div className="space-y-3">
+                  {[
+                    { name: "Başlangıç", kriter: "≤50 belge/ay · <1M TL ciro", ay: "990 TL/ay", yillik: "695 TL/ay yıllık" },
+                    { name: "Standart", kriter: "51–300 belge · 1–10M TL", ay: "1.790 TL/ay", yillik: "1.255 TL/ay yıllık" },
+                    { name: "Kurumsal", kriter: "300+ belge · 10M+ TL", ay: "2.990 TL/ay", yillik: "2.095 TL/ay yıllık" },
+                  ].map((row) => (
+                    <div key={row.name} className="flex items-center justify-between rounded-[18px] border border-[#DCE7F1] bg-[#F8FAFC] px-4 py-3.5">
+                      <div>
+                        <p className="text-[14px] font-bold text-black">{row.name}</p>
+                        <p className="text-[12px] text-black/50">{row.kriter}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-[14px] font-bold text-black">{row.ay}</p>
+                        <p className="text-[12px] font-semibold text-[#1b98d5]">{row.yillik}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Dijital Asistan */}
+              <div>
+                <p className="mb-1 text-[15px] font-bold text-black">Dijital Asistan (AI+İnsan)</p>
+                <p className="mb-3 text-[13px] text-black/50">Belge işleme · Fatura kesilemez</p>
+                <div className="space-y-3">
+                  {[
+                    { name: "Başlangıç", kriter: "0–50 belge/ay", ay: "490 TL/ay", yillik: "345 TL/ay yıllık" },
+                    { name: "Standart", kriter: "51–200 belge/ay", ay: "990 TL/ay", yillik: "695 TL/ay yıllık" },
+                    { name: "Pro", kriter: "200+ belge/ay", ay: "1.990 TL/ay", yillik: "1.395 TL/ay yıllık" },
+                  ].map((row) => (
+                    <div key={row.name} className="flex items-center justify-between rounded-[18px] border border-[#DCE7F1] bg-[#F8FAFC] px-4 py-3.5">
+                      <div>
+                        <p className="text-[14px] font-bold text-black">{row.name}</p>
+                        <p className="text-[12px] text-black/50">{row.kriter}</p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-[14px] font-bold text-black">{row.ay}</p>
+                        <p className="text-[12px] font-semibold text-[#1b98d5]">{row.yillik}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Marka Tescil + Teşvik + Sanal Ofis */}
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="rounded-[22px] border border-[#DCE7F1] bg-[#F8FAFC] px-5 py-5">
+                <p className="text-[13px] font-bold uppercase tracking-[0.12em] text-[#1b98d5]">Marka Tescil</p>
+                <p className="mt-3 text-[26px] font-bold tracking-[-0.04em] text-black">4.900 TL</p>
+                <p className="mt-1 text-[13px] text-black/50">TPE harcı dahil · 1 sınıf</p>
+                <div className="mt-3 space-y-1.5 text-[13px] text-black/60">
+                  <p>+ 1.500 TL / ek sınıf</p>
+                  <p>+ 290 TL/ay takip & yenileme</p>
+                </div>
+              </div>
+              <div className="rounded-[22px] border border-[#DCE7F1] bg-[#F8FAFC] px-5 py-5">
+                <p className="text-[13px] font-bold uppercase tracking-[0.12em] text-[#1b98d5]">Teşvik Analizi</p>
+                <p className="mt-3 text-[13px] text-black/50">KOSGEB · TÜBİTAK · Ticaret Bak.</p>
+                <p className="mt-2 text-[26px] font-bold tracking-[-0.04em] text-black">990 TL</p>
+                <p className="mt-1 text-[13px] text-black/50">Tek seferlik AI analizi</p>
+                <p className="mt-2 text-[13px] text-black/60">+ 290 TL/ay aktif başvuru takibi</p>
+              </div>
+              <div className="rounded-[22px] border border-[#DCE7F1] bg-[#F8FAFC] px-5 py-5">
+                <p className="text-[13px] font-bold uppercase tracking-[0.12em] text-[#1b98d5]">Sanal Ofis</p>
+                <p className="mt-3 text-[13px] font-semibold text-[#16A34A]">Kuruluşta 1 Yıl Ücretsiz</p>
+                <p className="mt-2 text-[26px] font-bold tracking-[-0.04em] text-black">490 TL<span className="text-[15px] text-black/50">/ay</span></p>
+                <p className="mt-1 text-[13px] text-black/50">Devam aboneliği</p>
+                <p className="mt-1 text-[13px] font-semibold text-[#1b98d5]">345 TL/ay yıllık (%30 ↓)</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 py-10">
         <div className="mx-auto max-w-[1230px]">
           <div className="grid gap-4 lg:grid-cols-3">
@@ -375,7 +554,14 @@ export default function PricingPage() {
               {ecosystemModules.map((module) => (
                 <div key={module.code} className="bg-[#F9FBFC] md:grid md:grid-cols-[1.45fr_0.75fr_0.8fr_0.8fr_1.4fr]">
                   <div className="px-5 py-5">
-                    <p className={`text-[18px] font-bold ${module.color}`}>{module.name}</p>
+                    {module.code === "M4" ? (
+                      <Link href="/kolay-startup" className={`group inline-flex items-center gap-1.5 text-[18px] font-bold underline-offset-4 hover:underline ${module.color}`}>
+                        {module.name}
+                        <span className="text-[11px] font-semibold text-[#94A3B8] group-hover:text-current">↗</span>
+                      </Link>
+                    ) : (
+                      <p className={`text-[18px] font-bold ${module.color}`}>{module.name}</p>
+                    )}
                   </div>
                   <div className="px-5 py-5 md:border-l md:border-[#D7E0EA]">
                     <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-black/40 md:hidden">Tekil alım /ay</p>

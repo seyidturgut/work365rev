@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import ContactForm from "@/components/ContactForm";
 
 export default function ContactPage() {
   return (
@@ -28,38 +29,23 @@ export default function ContactPage() {
             </div>
 
             <div className="px-8 py-10 md:px-12 md:py-14">
-              <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-[#1B98D5]">Hızlı Yönlendirme</p>
-              <h2 className="mt-4 text-[30px] font-bold tracking-[-0.04em] text-[#0F172A] md:text-[38px]">
-                Sizin için doğru başlangıç noktasını seçin.
+              <p className="text-[12px] font-bold uppercase tracking-[0.24em] text-[#1B98D5]">Mesaj Gönderin</p>
+              <h2 className="mt-4 text-[28px] font-bold tracking-[-0.04em] text-[#0F172A] md:text-[34px]">
+                Size en kısa sürede dönelim.
               </h2>
-              <div className="mt-8 grid gap-4">
-                <Link
-                  href="/kayit-ol"
-                  className="rounded-[24px] border border-[#D8E5F0] bg-[#F8FBFD] px-5 py-5 transition-colors hover:bg-white"
-                >
-                  <p className="text-[18px] font-bold text-[#0F172A]">Hemen hesap oluştur</p>
-                  <p className="mt-1 text-[14px] leading-7 text-[#64748B]">
-                    Doğrudan kayıt olun, paket seçiminizi koruyarak panel akışına geçin.
-                  </p>
-                </Link>
-                <Link
-                  href="/fiyatlandirma"
-                  className="rounded-[24px] border border-[#D8E5F0] bg-white px-5 py-5 transition-colors hover:bg-[#F8FBFD]"
-                >
-                  <p className="text-[18px] font-bold text-[#0F172A]">Paketleri tekrar incele</p>
-                  <p className="mt-1 text-[14px] leading-7 text-[#64748B]">
-                    Şirket tipi ve fiyatlandırma seçeneklerini yeniden karşılaştırın.
-                  </p>
-                </Link>
-                <Link
-                  href="/digital-altyapi"
-                  className="rounded-[24px] border border-[#D8E5F0] bg-white px-5 py-5 transition-colors hover:bg-[#F8FBFD]"
-                >
-                  <p className="text-[18px] font-bold text-[#0F172A]">Dijital altyapı modüllerine git</p>
-                  <p className="mt-1 text-[14px] leading-7 text-[#64748B]">
-                    E-imza, KEP ve diğer kurulum bileşenlerini buradan seçin.
-                  </p>
-                </Link>
+              <p className="mt-3 text-[14px] leading-6 text-[#64748B]">
+                Formu doldurun, satış ekibimiz 1 iş günü içinde iletişime geçer.
+              </p>
+              <div className="mt-8">
+                <ContactForm />
+              </div>
+              <div className="mt-8 border-t border-[#E2E8F0] pt-6">
+                <p className="text-[13px] text-[#94A3B8]">Ya da direkt ulaşın:</p>
+                <div className="mt-2 flex flex-wrap gap-4 text-[13px] font-medium text-[#475569]">
+                  <Link href="mailto:hello@work365.co" className="hover:text-[#1B98D5]">hello@work365.co</Link>
+                  <span>·</span>
+                  <Link href="tel:+908500003635" className="hover:text-[#1B98D5]">+90 850 000 36 35</Link>
+                </div>
               </div>
             </div>
           </div>

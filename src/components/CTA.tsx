@@ -119,7 +119,7 @@ export default function CTA() {
                 className="absolute -bottom-4 -left-8 bg-white rounded-2xl shadow-lg px-3 py-2"
               >
                 <p className="text-[10px] font-bold text-black/40">Dijital Altyapı</p>
-                <p className="text-[12px] font-bold text-[#1B98D5]">M1 · M2 · M3</p>
+                <p className="text-[12px] font-bold text-[#1B98D5]">Ofis · Web · Sosyal</p>
               </motion.div>
             </div>
           </div>

@@ -30,7 +30,7 @@ const modules = [
     href: "/digital-altyapi",
   },
   {
-    tag: "M1",
+    tag: "Dijital Ofis",
     name: "Dijital Ofis & IT",
     description: "Microsoft 365 lisansları, kurumsal e-posta ve IT altyapısı Piri güvencesiyle.",
     icon: <Monitor className="w-5 h-5 text-[#1B98D5]" />,
@@ -38,7 +38,7 @@ const modules = [
     href: "/ekosistem",
   },
   {
-    tag: "M2",
+    tag: "Web Varlık",
     name: "Web & Dijital Varlık",
     description: "Kurumsal web sitesi, alan adı ve dijital kimlik hizmetleri.",
     icon: <Globe className="w-5 h-5 text-[#B37A08]" />,
@@ -46,7 +46,7 @@ const modules = [
     href: "/ekosistem",
   },
   {
-    tag: "M3",
+    tag: "Sosyal Medya",
     name: "Sosyal Medya & İçerik",
     description: "Marka yönetimi, içerik üretimi ve sosyal medya operasyonu.",
     icon: <Megaphone className="w-5 h-5 text-[#E11D48]" />,

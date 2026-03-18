@@ -41,12 +41,13 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="font-semibold mb-6">Yönetim</h4>
+          <h4 className="font-semibold mb-6">Hizmetler</h4>
           <ul className="space-y-4 text-Work365-text text-sm">
-            <li><Link href="#" className="hover:text-black transition-colors">Muhasebe</Link></li>
-            <li><Link href="#" className="hover:text-black transition-colors">Vergi Beyannamesi</Link></li>
-            <li><Link href="#" className="hover:text-black transition-colors">Yıllık Raporlamalar</Link></li>
-            <li><Link href="#" className="hover:text-black transition-colors">Compliance Planı</Link></li>
+            <li><Link href="/fiyatlandirma" className="hover:text-black transition-colors">Fiyatlandırma</Link></li>
+            <li><Link href="/digital-altyapi" className="hover:text-black transition-colors">Dijital Altyapı</Link></li>
+            <li><Link href="/ekosistem" className="hover:text-black transition-colors">Ekosistem</Link></li>
+            <li><Link href="/kolay-startup" className="hover:text-black transition-colors">KolayStartup</Link></li>
+            <li><Link href="/contact" className="hover:text-black transition-colors">İletişim</Link></li>
           </ul>
         </div>
 

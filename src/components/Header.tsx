@@ -7,9 +7,13 @@ import {
   Building2,
   ChevronDown,
   ChevronRight,
+  Globe,
   Landmark,
+  Layers,
   Menu,
+  Network,
   ReceiptText,
+  Rocket,
   UserRound,
   X,
 } from "lucide-react";
@@ -42,20 +46,44 @@ const companyItems = [
   },
 ] as const;
 
+const serviceItems = [
+  {
+    href: "/digital-altyapi",
+    label: "Dijital Altyapı",
+    description: "e-İmza, KEP ve sanal ofis çözümleri",
+    icon: Layers,
+  },
+  {
+    href: "/ekosistem",
+    label: "Ekosistem",
+    description: "M365, web sitesi, sosyal medya ve büyüme modülleri",
+    icon: Network,
+  },
+  {
+    href: "/kolay-startup",
+    label: "KolayStartup",
+    description: "Girişimciler için startup ekosistemi platformu",
+    icon: Rocket,
+  },
+  {
+    href: "/contact",
+    label: "İletişim",
+    description: "Satış ekibimize ulaşın",
+    icon: Globe,
+  },
+] as const;
+
 const navItems = [
-  { href: "/fiyatlandirma", label: "Fiyatlandırma" },
-  { href: "/digital-altyapi", label: "Dijital Altyapı" },
-  { href: "/ekosistem", label: "Ekosistem" },
-  { href: "/kolay-startup", label: "Kolay Startup" },
   { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "İletişim" },
 ] as const;
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isCompanyMenuOpen, setIsCompanyMenuOpen] = useState(false);
+  const [isServiceMenuOpen, setIsServiceMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileCompanyOpen, setIsMobileCompanyOpen] = useState(false);
+  const [isMobileServiceOpen, setIsMobileServiceOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
 
@@ -69,8 +97,10 @@ export default function Header() {
 
   useEffect(() => {
     setIsCompanyMenuOpen(false);
+    setIsServiceMenuOpen(false);
     setIsMobileMenuOpen(false);
     setIsMobileCompanyOpen(false);
+    setIsMobileServiceOpen(false);
   }, [pathname]);
 
   const isCompanyPage = useMemo(
@@ -159,7 +189,53 @@ export default function Header() {
               </div>
             </div>
 
-            {navItems.slice(1).map((item) => (
+            {/* Hizmetler dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsServiceMenuOpen(true)}
+              onMouseLeave={() => setIsServiceMenuOpen(false)}
+            >
+              <button
+                type="button"
+                onClick={() => setIsServiceMenuOpen((prev) => !prev)}
+                className="flex items-center gap-2 whitespace-nowrap tracking-[-0.01em] transition-opacity hover:opacity-70"
+              >
+                <span>Hizmetler</span>
+                <ChevronDown className={`h-4 w-4 transition-transform ${isServiceMenuOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              <div
+                className={`absolute left-0 top-full pt-4 transition-all duration-200 ${
+                  isServiceMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+                }`}
+              >
+                <div className="w-[340px] rounded-[28px] bg-white p-3 shadow-[0_24px_60px_rgba(15,23,42,0.14)] ring-1 ring-black/6">
+                  {serviceItems.map((item) => {
+                    const Icon = item.icon;
+                    const active = pathname === item.href;
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={`flex items-start gap-3 rounded-[18px] px-3 py-3 transition-colors ${
+                          active ? "bg-[#F7FAFF]" : "hover:bg-[#F7FAFF]"
+                        }`}
+                      >
+                        <div className="mt-0.5 rounded-[16px] bg-[#F4F6FA] p-2.5 text-black">
+                          <Icon className="h-4 w-4" />
+                        </div>
+                        <div>
+                          <p className="text-[15px] font-bold text-black">{item.label}</p>
+                          <p className="mt-1 text-[12px] leading-5 text-black/58">{item.description}</p>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
@@ -236,7 +312,43 @@ export default function Header() {
                 </div>
               ) : null}
 
-              {navItems.slice(1).map((item) => (
+              {/* Hizmetler mobile */}
+              <button
+                type="button"
+                onClick={() => setIsMobileServiceOpen((prev) => !prev)}
+                className="flex w-full items-center justify-between rounded-[18px] bg-[#F7F9FC] px-4 py-3 text-left text-[14px] font-bold text-black"
+              >
+                <span className="flex items-center gap-3">
+                  <Layers className="h-5 w-5" />
+                  Hizmetler
+                </span>
+                <ChevronDown className={`h-4 w-4 transition-transform ${isMobileServiceOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {isMobileServiceOpen ? (
+                <div className="space-y-2 rounded-[20px] bg-[#FAFBFD] p-2">
+                  {serviceItems.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="flex items-start gap-3 rounded-[16px] px-3 py-3 transition-colors hover:bg-white"
+                      >
+                        <div className="rounded-xl bg-white p-2.5 ring-1 ring-black/5">
+                          <Icon className="h-4 w-4" />
+                        </div>
+                        <div>
+                          <p className="text-[14px] font-bold text-black">{item.label}</p>
+                          <p className="mt-1 text-[12px] leading-5 text-black/58">{item.description}</p>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              ) : null}
+
+              {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
