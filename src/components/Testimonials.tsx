@@ -9,27 +9,27 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      name: "Adam Fuller",
-      role: "Flagaholics'in Kurucu Ortağı",
-      quote: "Work365, Flagaholics'in yasal ve mali işlemlerini halletti, böylece biz de büyümeye ve harika bir müşteri deneyimi sunmaya odaklanabildik.",
-      image: "/founder_gym.png",
-      headshot: "/founder_1.png",
+      name: "Merve Arslan",
+      role: "Kurucu & CEO, Forma Digital",
+      quote: "Work365 ile hem limited şirketimi kurdum hem de muhasebe süreçlerimi tek yerden yönetmeye başladım. Artık finans tarafını düşünmeden sadece müşterilerime odaklanabiliyorum.",
+      image: "/testimonial_merve.jpg",
+      headshot: "/testimonial_merve.jpg",
       color: "bg-[#E6F9F9]"
     },
     {
-      name: "Deon Bryan",
-      role: "Viteranz'da CEO",
-      quote: "Şirket kurmak hiç bu kadar kolay olmamıştı. Work365 ekibi her adımda yanımızdaydı ve tüm bürokrasiyi bizim için çözdü.",
-      image: "/founder_1.png",
-      headshot: "/founder_1.png",
+      name: "Burak Şahin",
+      role: "Kurucu Ortak, Netflow Yazılım",
+      quote: "Şirket kurma sürecinde muhasebeci bulmak, vergi takibi, e-imza derken çıldıracaktım. Work365 bunları tek pakette sundu. Yazılım geliştirmeye odaklanmam için tam olarak ihtiyacım olan çözümdü.",
+      image: "/testimonial_ahmet.jpg",
+      headshot: "/testimonial_ahmet.jpg",
       color: "bg-[#FDF2E9]"
     },
     {
-      name: "Alex Lieberman",
-      role: "Storyar'ın kurucusu",
-      quote: "ABD pazarına açılmak büyük bir adımdı. Work365 ile bu süreci sorunsuz bir şekilde atlattık. Gerçekten kurucular dostu bir platform.",
-      image: "/founder_2.png",
-      headshot: "/founder_2.png",
+      name: "Selin Öztürk",
+      role: "Kurucu, Argan Atölyesi",
+      quote: "Şahıs şirketinden limited şirkete geçiş sürecini Work365 ekibi çok sorunsuz yürüttü. 3 yıldır kullanıyorum ve özellikle KDV beyanları konusunda hâlâ yanımda olduklarını hissediyorum.",
+      image: "/testimonial_selin.jpg",
+      headshot: "/testimonial_selin.jpg",
       color: "bg-[#F0F4F8]"
     }
   ];

@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { ChevronRight, CheckCircle2, ShieldCheck, ShoppingBag, Sparkles, X } from "lucide-react";
+import { ChevronRight, CheckCircle2, ShieldCheck, Sparkles, TrendingUp, X } from "lucide-react";
 
 const advisorQuestions = [
   {
@@ -112,8 +112,7 @@ export default function Hero() {
             {[
               { text: "Kur,", highlight: false },
               { text: "Çalıştır,", highlight: false },
-              { text: "Büyüt,", highlight: false },
-              { text: "Yatırım Al.", highlight: true }
+              { text: "Büyüt.", highlight: true }
             ].map((item, index) => (
               <motion.span
                 key={index}
@@ -136,28 +135,20 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
-            <Link
-              href="/fiyatlandirma"
-              className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-full text-[15px] font-bold transition-colors flex items-center justify-center gap-2"
-            >
-              Hemen Şirketini Kur <ChevronRight className="w-5 h-5" strokeWidth={3} />
-            </Link>
             <button
               type="button"
               onClick={() => setIsAdvisorOpen(true)}
-              className="group relative overflow-hidden rounded-full p-[1px]"
+              className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-full text-[15px] font-bold transition-colors flex items-center justify-center gap-2"
             >
-              <motion.span
-                aria-hidden="true"
-                className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,rgba(27,152,213,0.18),rgba(242,217,109,0.95),rgba(27,152,213,0.18))]"
-                animate={{ rotate: 360 }}
-                transition={{ repeat: Infinity, duration: 3.2, ease: "linear" }}
-              />
-              <span className="relative flex items-center gap-2 rounded-full bg-[#FFFDF7] px-6 py-4 text-[15px] font-bold text-[#0E4A6E] transition-colors group-hover:bg-white">
-                <Sparkles className="h-4 w-4 text-[#A88208]" strokeWidth={2.5} />
-                Şirket Türünü Bul
-              </span>
+              <Sparkles className="h-4 w-4" strokeWidth={2.5} />
+              Şirket Türünü Bul
             </button>
+            <Link
+              href="/fiyatlandirma"
+              className="flex items-center gap-1 text-[15px] font-semibold text-Work365-text transition-opacity hover:opacity-70"
+            >
+              Fiyatlandırmayı Gör <ChevronRight className="w-4 h-4" strokeWidth={2.5} />
+            </Link>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -195,7 +186,7 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.4 }}
         className="mt-16 bg-white rounded-3xl py-8 px-12 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 flex-wrap w-full"
       >
-        <h3 className="text-xl font-bold text-black">Destekleyen Markalar</h3>
+        <h3 className="text-xl font-bold text-black">Ekosistem Ortakları</h3>
         
         <div className="flex items-center gap-10 flex-wrap justify-center [&_img]:h-8 [&_img]:w-auto">
           <a
@@ -505,8 +496,8 @@ function SlideOne() {
         </div>
       </motion.div>
 
-      {/* Floating UI: Orders */}
-      <motion.div 
+      {/* Floating UI: Monthly Revenue */}
+      <motion.div
         initial={{ opacity: 0, x: 20, y: 20 }}
         animate={{ opacity: 1, x: 10, y: -10 }}
         transition={{ delay: 0.7 }}
@@ -514,17 +505,17 @@ function SlideOne() {
       >
         <div className="bg-white rounded-2xl p-4 shadow-2xl">
           <div className="flex items-center gap-2 mb-3">
-             <ShoppingBag className="w-4 h-4" />
-             <span className="text-xs font-bold tracking-tight">Siparişler</span>
+             <TrendingUp className="w-4 h-4 text-green-600" />
+             <span className="text-xs font-bold tracking-tight">Aylık Gelir Özeti</span>
           </div>
           <div className="space-y-3">
              <div className="flex justify-between text-[10px]">
-                <span className="font-bold text-Work365-text/60">Ergonomik Sandalye</span>
-                <span className="font-bold">4.858 ₺</span>
+                <span className="font-bold text-Work365-text/60">e-Fatura Tahsilatı</span>
+                <span className="font-bold text-green-600">+12.450 ₺</span>
              </div>
              <div className="flex justify-between text-[10px]">
-                <span className="font-bold text-Work365-text/60">Altın Masa Lambası</span>
-                <span className="font-bold">2.158 ₺</span>
+                <span className="font-bold text-Work365-text/60">Danışmanlık Geliri</span>
+                <span className="font-bold text-green-600">+8.200 ₺</span>
              </div>
           </div>
         </div>

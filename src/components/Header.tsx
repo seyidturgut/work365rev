@@ -13,7 +13,6 @@ import {
   Menu,
   Network,
   ReceiptText,
-  Rocket,
   UserRound,
   X,
 } from "lucide-react";
@@ -58,12 +57,6 @@ const serviceItems = [
     label: "Ekosistem",
     description: "M365, web sitesi, sosyal medya ve büyüme modülleri",
     icon: Network,
-  },
-  {
-    href: "/kolay-startup",
-    label: "KolayStartup",
-    description: "Girişimciler için startup ekosistemi platformu",
-    icon: Rocket,
   },
   {
     href: "/iletisim",
@@ -112,21 +105,8 @@ export default function Header() {
     <header
       className={`fixed left-0 right-0 top-0 z-50 w-full transition-all duration-300 ${
         isHome ? "bg-[aliceblue]" : "bg-white"
-      } pt-2 ${isScrolled ? "pb-2 shadow-sm" : "pb-2"}`}
+      } py-3 ${isScrolled ? "shadow-sm" : ""}`}
     >
-      <div
-        className={`mx-auto flex max-w-[1230px] justify-end overflow-hidden px-6 transition-all duration-300 ${
-          isScrolled ? "mb-0 h-0 opacity-0" : "mb-3 h-5 opacity-100"
-        }`}
-      >
-        <div className="flex items-center whitespace-nowrap text-[13px] font-normal text-Work365-text">
-          <span className="mr-2">Zaten Bir Hesabınız Var Mı?</span>
-          <Link href="/giris" className="flex items-center font-bold transition-opacity hover:opacity-70">
-            Giriş Yap <ChevronRight className="ml-1 h-4 w-4" strokeWidth={3} />
-          </Link>
-        </div>
-      </div>
-
       <div className="mx-auto flex max-w-[1230px] items-center justify-between gap-8 px-6">
         <div className="flex min-w-0 items-center gap-11">
           <Link href="/" className="flex shrink-0 items-center">
@@ -247,7 +227,13 @@ export default function Header() {
           </nav>
         </div>
 
-        <div className="hidden items-center xl:flex">
+        <div className="hidden items-center gap-3 xl:flex">
+          <Link
+            href="/giris"
+            className="whitespace-nowrap text-[13px] font-semibold text-Work365-text transition-opacity hover:opacity-70"
+          >
+            Giriş Yap
+          </Link>
           <Link
             href="/kayit-ol"
             className="whitespace-nowrap rounded-full bg-black px-5 py-3 text-[13px] font-bold text-white shadow-sm transition-colors hover:bg-gray-800"
