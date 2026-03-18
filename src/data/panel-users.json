@@ -569,6 +569,710 @@
       "eTugraStatus": "triggered",
       "createdAt": "2026-03-10T00:36:21.490Z",
       "updatedAt": "2026-03-10T00:40:21.973Z"
+    },
+    {
+      "id": "7edb4abb-b043-45de-92ed-2a324d1de310",
+      "email": "google-demo-1773786495877@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "sahis-sirketi",
+        "label": "Şahıs Şirketi",
+        "price": 4500,
+        "priceLabel": "4.500 TL",
+        "source": "Şirket Kur sayfasından seçildi",
+        "term": "Tek seferlik başlangıç paketi",
+        "detailLabel": "Tek seferlik başlangıç paketi · Şirket Kur sayfasından seçildi",
+        "description": "Vergi dairesine tek başvuruyla mükellefiyet açın, e-Devlet üzerinden sürecinizi takip edin. Serbest meslek erbapları, freelancerlar ve küçük esnaf için noter şartı olmadan, düşük maliyetle hemen faaliyete geçin.",
+        "features": [
+          "Kuruluş",
+          "e-İmza 1Y",
+          "KEP Başlangıç 1Y",
+          "Sanal Ofis 1Y"
+        ]
+      },
+      "wizard": {
+        "currentStep": 1,
+        "completedStep": 0,
+        "status": "not_started",
+        "answers": {
+          "package": {
+            "companySlug": "sahis-sirketi",
+            "label": "Şahıs Şirketi",
+            "locked": true,
+            "confirmed": false
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": ""
+          },
+          "activityArea": {
+            "value": ""
+          }
+        }
+      },
+      "payment": {
+        "status": "pending",
+        "currentStep": 1,
+        "cardHolderName": "",
+        "cardLast4": "",
+        "invoice": {
+          "companyTitle": "",
+          "taxNumber": "",
+          "address": "",
+          "city": ""
+        },
+        "paidAt": null
+      },
+      "eTugraStatus": "idle",
+      "createdAt": "2026-03-17T22:28:15.877Z",
+      "updatedAt": "2026-03-17T22:28:15.877Z"
+    },
+    {
+      "id": "309174ef-ccdd-46f0-a6c5-ae2906632a4a",
+      "email": "google-demo-1773788501996@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "sahis-sirketi",
+        "label": "Şahıs Şirketi",
+        "price": 4500,
+        "priceLabel": "4.500 TL",
+        "source": "Şirket Kur sayfasından seçildi",
+        "term": "Tek seferlik başlangıç paketi",
+        "detailLabel": "Tek seferlik başlangıç paketi · Şirket Kur sayfasından seçildi",
+        "description": "Vergi dairesine tek başvuruyla mükellefiyet açın, e-Devlet üzerinden sürecinizi takip edin. Serbest meslek erbapları, freelancerlar ve küçük esnaf için noter şartı olmadan, düşük maliyetle hemen faaliyete geçin.",
+        "features": [
+          "Kuruluş",
+          "e-İmza 1Y",
+          "KEP Başlangıç 1Y",
+          "Sanal Ofis 1Y"
+        ]
+      },
+      "wizard": {
+        "currentStep": 1,
+        "completedStep": 0,
+        "status": "not_started",
+        "answers": {
+          "package": {
+            "companySlug": "sahis-sirketi",
+            "label": "Şahıs Şirketi",
+            "locked": true,
+            "confirmed": false
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": ""
+          },
+          "activityArea": {
+            "value": ""
+          }
+        }
+      },
+      "payment": {
+        "status": "pending",
+        "currentStep": 1,
+        "cardHolderName": "",
+        "cardLast4": "",
+        "invoice": {
+          "companyTitle": "",
+          "taxNumber": "",
+          "address": "",
+          "city": ""
+        },
+        "paidAt": null
+      },
+      "eTugraStatus": "idle",
+      "createdAt": "2026-03-17T23:01:41.996Z",
+      "updatedAt": "2026-03-17T23:01:41.996Z"
+    },
+    {
+      "id": "4986f7c4-5856-44e8-932d-bd84ef6aa6b7",
+      "email": "google-demo-1773788680605@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "sahis-sirketi",
+        "label": "Şahıs Şirketi",
+        "price": 4500,
+        "priceLabel": "4.500 TL",
+        "source": "Şirket Kur sayfasından seçildi",
+        "term": "Tek seferlik başlangıç paketi",
+        "detailLabel": "Tek seferlik başlangıç paketi · Şirket Kur sayfasından seçildi",
+        "description": "Vergi dairesine tek başvuruyla mükellefiyet açın, e-Devlet üzerinden sürecinizi takip edin. Serbest meslek erbapları, freelancerlar ve küçük esnaf için noter şartı olmadan, düşük maliyetle hemen faaliyete geçin.",
+        "features": [
+          "Kuruluş",
+          "e-İmza 1Y",
+          "KEP Başlangıç 1Y",
+          "Sanal Ofis 1Y"
+        ]
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "sahis-sirketi",
+            "label": "Şahıs Şirketi",
+            "locked": true,
+            "confirmed": false
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": ""
+          },
+          "activityArea": {
+            "value": ""
+          }
+        }
+      },
+      "payment": {
+        "status": "pending",
+        "currentStep": 1,
+        "cardHolderName": "",
+        "cardLast4": "",
+        "invoice": {
+          "companyTitle": "",
+          "taxNumber": "",
+          "address": "",
+          "city": ""
+        },
+        "paidAt": null
+      },
+      "eTugraStatus": "idle",
+      "createdAt": "2026-03-17T23:04:40.605Z",
+      "updatedAt": "2026-03-17T23:04:45.807Z"
+    },
+    {
+      "id": "b7e8c769-8a83-4abd-9178-7e9b538758b1",
+      "email": "google-demo-1773788841073@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "sahis-sirketi",
+        "label": "Şahıs Şirketi",
+        "price": 4500,
+        "priceLabel": "4.500 TL",
+        "source": "Şirket Kur sayfasından seçildi",
+        "term": "Tek seferlik başlangıç paketi",
+        "detailLabel": "Tek seferlik başlangıç paketi · Şirket Kur sayfasından seçildi",
+        "description": "Vergi dairesine tek başvuruyla mükellefiyet açın, e-Devlet üzerinden sürecinizi takip edin. Serbest meslek erbapları, freelancerlar ve küçük esnaf için noter şartı olmadan, düşük maliyetle hemen faaliyete geçin.",
+        "features": [
+          "Kuruluş",
+          "e-İmza 1Y",
+          "KEP Başlangıç 1Y",
+          "Sanal Ofis 1Y"
+        ]
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "sahis-sirketi",
+            "label": "Şahıs Şirketi",
+            "locked": true,
+            "confirmed": false
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": ""
+          },
+          "activityArea": {
+            "value": ""
+          }
+        }
+      },
+      "payment": {
+        "status": "pending",
+        "currentStep": 1,
+        "cardHolderName": "",
+        "cardLast4": "",
+        "invoice": {
+          "companyTitle": "",
+          "taxNumber": "",
+          "address": "",
+          "city": ""
+        },
+        "paidAt": null
+      },
+      "eTugraStatus": "idle",
+      "createdAt": "2026-03-17T23:07:21.073Z",
+      "updatedAt": "2026-03-17T23:07:29.625Z"
+    },
+    {
+      "id": "fb48c69c-ba90-4786-989f-80835c8a1062",
+      "email": "google-demo-1773788998947@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "sahis-sirketi",
+        "label": "Şahıs Şirketi",
+        "price": 4500,
+        "priceLabel": "4.500 TL",
+        "source": "Şirket Kur sayfasından seçildi",
+        "term": "Tek seferlik başlangıç paketi",
+        "detailLabel": "Tek seferlik başlangıç paketi · Şirket Kur sayfasından seçildi",
+        "description": "Vergi dairesine tek başvuruyla mükellefiyet açın, e-Devlet üzerinden sürecinizi takip edin. Serbest meslek erbapları, freelancerlar ve küçük esnaf için noter şartı olmadan, düşük maliyetle hemen faaliyete geçin.",
+        "features": [
+          "Kuruluş",
+          "e-İmza 1Y",
+          "KEP Başlangıç 1Y",
+          "Sanal Ofis 1Y"
+        ]
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "sahis-sirketi",
+            "label": "Şahıs Şirketi",
+            "locked": true,
+            "confirmed": false
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": ""
+          },
+          "activityArea": {
+            "value": ""
+          }
+        }
+      },
+      "payment": {
+        "status": "paid",
+        "currentStep": 7,
+        "cardHolderName": "Google Demo Kullanıcısı",
+        "cardLast4": "7011",
+        "invoice": {
+          "companyTitle": "Şahıs Şirketi",
+          "taxNumber": "1232435467777",
+          "address": "ismit",
+          "city": "Kocaeli"
+        },
+        "paidAt": "2026-03-17T23:11:07.265Z"
+      },
+      "eTugraStatus": "triggered",
+      "createdAt": "2026-03-17T23:09:58.947Z",
+      "updatedAt": "2026-03-17T23:11:07.265Z"
+    },
+    {
+      "id": "d6575e7c-f7c9-4565-9838-0a669fa794fa",
+      "email": "google-demo-1773789149039@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "mvp-gelistirme",
+        "label": "MVP Geliştirme",
+        "price": 6965,
+        "priceLabel": "6.965 TL",
+        "source": "Kolay Startup sayfasından seçildi",
+        "term": "Aylık plan",
+        "detailLabel": "Aylık plan · Kolay Startup sayfasından seçildi",
+        "description": "Yatırımcıya sun, ekip kur",
+        "features": [
+          "KolayJob & KolayTeam erişimi",
+          "Pitch Deck şablonları",
+          "Veri Odası (Data Room)",
+          "Gelişmiş analitik",
+          "Öncelikli destek",
+          "Mentor ve danışman erişimi"
+        ]
+      },
+      "wizard": {
+        "currentStep": 1,
+        "completedStep": 0,
+        "status": "not_started",
+        "answers": {
+          "package": {
+            "companySlug": "mvp-gelistirme",
+            "label": "MVP Geliştirme",
+            "locked": true,
+            "confirmed": false
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": ""
+          },
+          "activityArea": {
+            "value": ""
+          }
+        }
+      },
+      "payment": {
+        "status": "pending",
+        "currentStep": 1,
+        "cardHolderName": "",
+        "cardLast4": "",
+        "invoice": {
+          "companyTitle": "",
+          "taxNumber": "",
+          "address": "",
+          "city": ""
+        },
+        "paidAt": null
+      },
+      "eTugraStatus": "idle",
+      "createdAt": "2026-03-17T23:12:29.039Z",
+      "updatedAt": "2026-03-17T23:12:29.039Z"
+    },
+    {
+      "id": "c7f7ffa2-2a39-44ac-9040-b1fcf04035c7",
+      "email": "google-demo-1773789634635@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "sahis-sirketi",
+        "label": "Şahıs Şirketi",
+        "price": 4500,
+        "priceLabel": "4.500 TL",
+        "source": "Şirket Kur sayfasından seçildi",
+        "term": "Tek seferlik başlangıç paketi",
+        "detailLabel": "Tek seferlik başlangıç paketi · Şirket Kur sayfasından seçildi",
+        "description": "Vergi dairesine tek başvuruyla mükellefiyet açın, e-Devlet üzerinden sürecinizi takip edin. Serbest meslek erbapları, freelancerlar ve küçük esnaf için noter şartı olmadan, düşük maliyetle hemen faaliyete geçin.",
+        "features": [
+          "Kuruluş",
+          "e-İmza 1Y",
+          "KEP Başlangıç 1Y",
+          "Sanal Ofis 1Y"
+        ]
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "sahis-sirketi",
+            "label": "Şahıs Şirketi",
+            "locked": true,
+            "confirmed": false
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": ""
+          },
+          "activityArea": {
+            "value": ""
+          }
+        }
+      },
+      "payment": {
+        "status": "pending",
+        "currentStep": 1,
+        "cardHolderName": "",
+        "cardLast4": "",
+        "invoice": {
+          "companyTitle": "",
+          "taxNumber": "",
+          "address": "",
+          "city": ""
+        },
+        "paidAt": null
+      },
+      "eTugraStatus": "idle",
+      "createdAt": "2026-03-17T23:20:34.635Z",
+      "updatedAt": "2026-03-17T23:20:37.531Z"
+    },
+    {
+      "id": "cfe782b4-07e3-4ef7-81f6-4af7dcc5b3be",
+      "email": "google-demo-1773790090890@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "sahis-sirketi",
+        "label": "Şahıs Şirketi",
+        "price": 4500,
+        "priceLabel": "4.500 TL",
+        "source": "Fiyatlandırma sayfasından seçildi",
+        "term": "Aylık plan",
+        "detailLabel": "Aylık plan · Fiyatlandırma sayfasından seçildi",
+        "description": "Hızlı Başlangıç paket. Defter: 36k/y · Mali müşavirlik: 36k/y",
+        "features": [
+          "Kuruluş",
+          "e-İmza 1Y",
+          "KEP Başlangıç 1Y",
+          "Sanal Ofis 1Y",
+          "e-Dönüşüm"
+        ]
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "sahis-sirketi",
+            "label": "Şahıs Şirketi",
+            "locked": true,
+            "confirmed": false
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": ""
+          },
+          "activityArea": {
+            "value": ""
+          }
+        }
+      },
+      "payment": {
+        "status": "pending",
+        "currentStep": 1,
+        "cardHolderName": "",
+        "cardLast4": "",
+        "invoice": {
+          "companyTitle": "",
+          "taxNumber": "",
+          "address": "",
+          "city": ""
+        },
+        "paidAt": null
+      },
+      "eTugraStatus": "idle",
+      "createdAt": "2026-03-17T23:28:10.890Z",
+      "updatedAt": "2026-03-17T23:28:13.994Z"
+    },
+    {
+      "id": "9d7b38f3-c868-4a7a-9cc7-2bd902222cb0",
+      "email": "google-demo-1773790854181@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "buyume",
+        "label": "Büyüme",
+        "price": 17465,
+        "priceLabel": "17.465 TL",
+        "source": "Kolay Startup sayfasından seçildi",
+        "term": "Aylık plan",
+        "detailLabel": "Aylık plan · Kolay Startup sayfasından seçildi",
+        "description": "Ölçeklenen girişimler için",
+        "features": [
+          "VC/CVC köprüsü",
+          "SPK hazırlık desteği",
+          "MENA erişimi",
+          "Medya / PR görünürlüğü",
+          "Özel hesap yöneticisi",
+          "Demo Day öncelikli katılım"
+        ]
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "buyume",
+            "label": "Büyüme",
+            "locked": true,
+            "confirmed": false
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": ""
+          },
+          "activityArea": {
+            "value": ""
+          }
+        }
+      },
+      "payment": {
+        "status": "pending",
+        "currentStep": 1,
+        "cardHolderName": "",
+        "cardLast4": "",
+        "invoice": {
+          "companyTitle": "",
+          "taxNumber": "",
+          "address": "",
+          "city": ""
+        },
+        "paidAt": null
+      },
+      "eTugraStatus": "idle",
+      "createdAt": "2026-03-17T23:40:54.181Z",
+      "updatedAt": "2026-03-17T23:40:57.300Z"
+    },
+    {
+      "id": "4f58f4f3-58e6-4bc2-a319-2120b79f104d",
+      "email": "google-demo-1773791207023@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "m365-10-50-kullanici",
+        "label": "M365 10–50 Kullanıcı",
+        "price": 12750,
+        "priceLabel": "12.750 TL",
+        "source": "Ekosistem sayfasından seçildi",
+        "term": "Yıllık plan",
+        "detailLabel": "Yıllık plan · Ekosistem sayfasından seçildi",
+        "description": "Microsoft 365 ile ekip e-posta, dosya paylaşımı ve toplantı akışını merkezi hale getirin.",
+        "features": [
+          "Tüm 0-10 özellikleri",
+          "Exchange politikaları",
+          "SharePoint",
+          "Güvenlik raporu"
+        ]
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "m365-10-50-kullanici",
+            "label": "M365 10–50 Kullanıcı",
+            "locked": true,
+            "confirmed": false
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": ""
+          },
+          "activityArea": {
+            "value": ""
+          }
+        }
+      },
+      "payment": {
+        "status": "paid",
+        "currentStep": 7,
+        "cardHolderName": "Google Demo Kullanıcısı",
+        "cardLast4": "7011",
+        "invoice": {
+          "companyTitle": "",
+          "taxNumber": "",
+          "address": "",
+          "city": ""
+        },
+        "paidAt": "2026-03-17T23:47:02.004Z"
+      },
+      "eTugraStatus": "triggered",
+      "createdAt": "2026-03-17T23:46:47.023Z",
+      "updatedAt": "2026-03-17T23:47:02.004Z"
+    },
+    {
+      "id": "3827893e-6754-4cf3-998f-64f43fa73bb6",
+      "email": "google-demo-1773791369598@work365.local",
+      "password": "google-demo",
+      "fullName": "Google Demo Kullanıcısı",
+      "phone": "0555 000 00 00",
+      "selectedPackage": {
+        "companySlug": "fikir-asamasi",
+        "label": "Kolay Startup - Fikir Aşaması",
+        "price": null,
+        "priceLabel": "Teklif sırasında netleşecek",
+        "source": null,
+        "term": null,
+        "detailLabel": "Seçilen paket",
+        "description": null,
+        "features": []
+      },
+      "wizard": {
+        "currentStep": 5,
+        "completedStep": 5,
+        "status": "completed",
+        "answers": {
+          "package": {
+            "companySlug": "fikir-asamasi",
+            "label": "Kolay Startup - Fikir Aşaması",
+            "locked": true,
+            "confirmed": true
+          },
+          "fullName": {
+            "value": "Google Demo Kullanıcısı"
+          },
+          "phone": {
+            "value": "0555 000 00 00"
+          },
+          "companyName": {
+            "value": ""
+          },
+          "activityArea": {
+            "value": ""
+          }
+        }
+      },
+      "payment": {
+        "status": "pending",
+        "currentStep": 1,
+        "cardHolderName": "",
+        "cardLast4": "",
+        "invoice": {
+          "companyTitle": "",
+          "taxNumber": "",
+          "address": "",
+          "city": ""
+        },
+        "paidAt": null
+      },
+      "eTugraStatus": "idle",
+      "createdAt": "2026-03-17T23:49:29.598Z",
+      "updatedAt": "2026-03-17T23:49:37.043Z"
     }
   ]
 }
