@@ -66,7 +66,7 @@ const serviceItems = [
     icon: Rocket,
   },
   {
-    href: "/contact",
+    href: "/iletisim",
     label: "İletişim",
     description: "Satış ekibimize ulaşın",
     icon: Globe,

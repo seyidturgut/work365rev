@@ -532,7 +532,7 @@ export default function EkosistemPage() {
                 </div>
 
                 <Link
-                  href={plan.isCustom ? "/contact" : "/kayit-ol"}
+                  href={plan.isCustom ? "/iletisim" : "/kayit-ol"}
                   className={`mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full px-4 py-3 text-[13px] font-bold transition-all duration-300 hover:scale-[1.02] ${
                     plan.popular
                       ? "bg-[#E11D48] text-white shadow-sm"

@@ -47,7 +47,7 @@ export default function Footer() {
             <li><Link href="/digital-altyapi" className="hover:text-black transition-colors">Dijital Altyapı</Link></li>
             <li><Link href="/ekosistem" className="hover:text-black transition-colors">Ekosistem</Link></li>
             <li><Link href="/kolay-startup" className="hover:text-black transition-colors">KolayStartup</Link></li>
-            <li><Link href="/contact" className="hover:text-black transition-colors">İletişim</Link></li>
+            <li><Link href="/iletisim" className="hover:text-black transition-colors">İletişim</Link></li>
           </ul>
         </div>
 
