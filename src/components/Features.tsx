@@ -4,11 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  BarChart3,
   BookOpen,
   ChevronRight,
   KeyRound,
-  Percent,
+  Network,
   Rocket,
 } from "lucide-react";
 import { useState } from "react";
@@ -51,37 +50,26 @@ const features: Feature[] = [
     mockupType: "bookkeeping",
   },
   {
-    label: "Vergiler",
-    title: "Vergi süreçlerinizi tek panelden takip edin.",
-    cta: "Vergi Süreçlerini Görün",
-    href: "/digital-altyapi",
-    icon: <Percent className="w-4 h-4 text-[#00A86B]" />,
-    bgColor: "bg-[#CFEED6]",
-    textColor: "text-[#00A86B]",
-    gridSpan: "lg:col-span-2",
-    mockupType: "taxes",
-  },
-  {
-    label: "Dijital Altyapı Ürünleri",
+    label: "Dijital Altyapı",
     title: "e-İmza ve KEP süreçlerini tek yerden yönetin.",
     cta: "Dijital Altyapıyı İnceleyin",
     href: "/digital-altyapi",
     icon: <KeyRound className="w-4 h-4 text-[#0F766E]" />,
     bgColor: "bg-[#E9F8F6]",
     textColor: "text-[#0F766E]",
-    gridSpan: "lg:col-span-3",
+    gridSpan: "lg:col-span-2",
     mockupType: "infrastructure",
   },
   {
-    label: "Analiz",
-    title: "Daha Akıllı İş Kararları İçin Güçlü Analizler.",
-    cta: "Satışlarınızı Analiz Edin",
+    label: "Ekosistem",
+    title: "Büyümeyi destekleyen entegre iş ortağı ağı.",
+    cta: "Ekosistemi Keşfet",
     href: "/ekosistem",
-    icon: <BarChart3 className="w-4 h-4 text-[#D84C6F]" />,
-    bgColor: "bg-[#FFF2F5]",
-    textColor: "text-[#D84C6F]",
-    gridSpan: "lg:col-span-3",
-    mockupType: "analytics",
+    icon: <Network className="w-4 h-4 text-[#1b98d5]" />,
+    bgColor: "bg-[#E8F4FD]",
+    textColor: "text-[#1b98d5]",
+    gridSpan: "lg:col-span-4",
+    mockupType: "ecosystem",
   },
 ];
 
@@ -89,8 +77,8 @@ const featureTabs = [
   "Hepsi Bir Arada İş Paketi",
   "Kuruluş",
   "Muhasebe",
-  "Vergiler",
-  "Analitik",
+  "Dijital Altyapı",
+  "Ekosistem",
 ];
 
 export default function Features() {
@@ -134,10 +122,10 @@ export default function Features() {
           <FormationShowcase />
         ) : activeTab === "Muhasebe" ? (
           <BookkeepingShowcase />
-        ) : activeTab === "Vergiler" ? (
-          <TaxesShowcase />
-        ) : activeTab === "Analitik" ? (
-          <AnalyticsShowcase />
+        ) : activeTab === "Dijital Altyapı" ? (
+          <DigitalAltyapiShowcase />
+        ) : activeTab === "Ekosistem" ? (
+          <EcosystemShowcase />
         ) : (
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-8">
           {features.map((feature, index) => {
@@ -188,12 +176,10 @@ export default function Features() {
                     <FormationMockup isHorizontal={isHorizontal} hideStroke={!isHorizontal} />
                   ) : feature.mockupType === "bookkeeping" ? (
                     <BookkeepingMockup isHorizontal={isHorizontal} />
-                  ) : feature.mockupType === "taxes" ? (
-                    <TaxesMockup isHorizontal={isHorizontal} />
                   ) : feature.mockupType === "infrastructure" ? (
                     <DigitalInfrastructureMockup />
-                  ) : feature.mockupType === "analytics" ? (
-                    <PackageAnalyticsMockup />
+                  ) : feature.mockupType === "ecosystem" ? (
+                    <EcosystemMockup />
                   ) : (
                     <div
                       className={`absolute inset-0 bg-white shadow-2xl border border-gray-100 p-3 ${
@@ -344,234 +330,167 @@ function BookkeepingShowcase() {
   );
 }
 
-function TaxesShowcase() {
+function DigitalAltyapiShowcase() {
   return (
-    <div className="grid grid-cols-1 gap-5 xl:grid-cols-[1.12fr_0.88fr]">
-      <div className="rounded-[34px] bg-[#CFEED6] px-6 pt-7 pb-5">
-        <p className="text-[16px] font-bold text-[#15803D]">Yıllık Vergi Beyannameleri</p>
-        <h3 className="mt-4 max-w-[700px] text-[19px] font-bold leading-[1.2] tracking-[-0.03em] text-black md:text-[22px]">
-          Vergi beyannamelerinizi zamanında vererek yasalara uyumlu kalın.
-        </h3>
-        <p className="mt-4 max-w-[720px] text-[16px] leading-[1.5] text-black/85">
-          Vergi süreçlerinizi zamanında ve doğru şekilde yönetiyoruz, böylece cezalardan kaçınabilir ve işinizi büyütmeye odaklanabilirsiniz.
-        </p>
-        <div className="relative mt-6 h-[210px] overflow-hidden md:h-[238px]">
-          <div className="absolute left-0 top-0 h-[288px] w-[calc(100%/0.69)] origin-top-left scale-[0.69] md:h-[304px] md:w-[calc(100%/0.71)] md:scale-[0.71]">
-            <TaxesMockup isHorizontal={false} />
-          </div>
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-5">
-        <div className="relative overflow-hidden rounded-[34px] bg-[#CFEED6] px-6 pt-7 pb-6">
-          <p className="text-[16px] font-bold text-[#15803D]">Vergi Beyan Takibi</p>
-          <h3 className="mt-4 max-w-[500px] text-[19px] font-bold leading-[1.2] tracking-[-0.03em] text-black md:text-[22px]">
-            İşletmeler için doğru ve zamanında vergi beyan takibi.
-          </h3>
-          <p className="mt-4 max-w-[500px] text-[16px] leading-[1.5] text-black/85">
-            Son teslim tarihlerini kaçırmadan, tüm süreçleri tek merkezden takip edin ve dosyalamanızı güvenle yönetin.
-          </p>
-          <div className="mt-5 flex h-[180px] items-end justify-end rounded-[22px] bg-[radial-gradient(circle_at_70%_60%,rgba(21,128,61,0.16)_0,rgba(21,128,61,0.16)_17%,transparent_18%)]">
-            <Image
-              src="/vergi.webp"
-              alt="Vergi süreçleri görseli"
-              width={300}
-              height={220}
-              className="h-auto w-[190px] object-contain"
-            />
-          </div>
-        </div>
-
-        <div className="rounded-[34px] border-2 border-[#15803D] bg-white px-6 pt-7 pb-6">
-          <p className="text-[16px] font-bold text-[#15803D]">Lisanslı Vergi Uzmanı Danışmanlığı</p>
-          <h3 className="mt-4 max-w-[520px] text-[19px] font-bold leading-[1.2] tracking-[-0.03em] text-black md:text-[22px]">
-            Vergi işlemlerinizde size rehberlik edecek kişiselleştirilmiş uzman desteği.
-          </h3>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function AnalyticsShowcase() {
-  return (
-    <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.02fr_0.98fr]">
-      <div className="rounded-[38px] bg-[#F9E8EE] px-7 pt-8 pb-6">
-        <p className="text-[16px] font-bold text-[#A16876]">İş Analitiği</p>
+    <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1.1fr_0.9fr]">
+      <div className="rounded-[38px] bg-[#E9F8F6] px-7 pt-8 pb-6">
+        <p className="text-[16px] font-bold text-[#0F766E]">e-İmza — E-Tuğra Nitelikli</p>
         <h3 className="mt-5 max-w-[700px] text-[20px] font-bold leading-[1.2] tracking-[-0.03em] text-black md:text-[24px]">
-          Daha akıllı kararlar için tasarlanmış güçlü panel analitiği.
+          Resmi işlemleriniz için yasal geçerliliğe sahip nitelikli elektronik imza.
         </h3>
-        <p className="mt-5 max-w-[760px] text-[17px] leading-[1.5] text-black/85">
-          Gelir, gider, operasyon ve süreç performansını tek panelden izleyerek daha hızlı ve daha doğru kararlar alın.
+        <p className="mt-5 max-w-[720px] text-[17px] leading-[1.5] text-black/85">
+          e-İmza ile attığınız imza, ıslak imzayla aynı hukuki geçerliliğe sahiptir. e-Devlet, GİB, MERSIS ve SGK portallarına güvenli erişim sağlayın.
         </p>
-        <div className="relative mt-8 h-[250px] overflow-hidden md:h-[280px]">
-          <div className="absolute left-0 top-0 h-[322px] w-[calc(100%/0.74)] origin-top-left scale-[0.74] md:h-[350px] md:w-[calc(100%/0.76)] md:scale-[0.76]">
-            <OrdersAnalyticsMockup />
+        <div className="relative mt-8 h-[240px] overflow-hidden md:h-[268px]">
+          <div className="absolute left-0 top-0 h-[310px] w-[calc(100%/0.74)] origin-top-left scale-[0.74] md:h-[340px] md:w-[calc(100%/0.76)] md:scale-[0.76]">
+            <DigitalInfrastructureMockup />
           </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-6">
-        <div className="rounded-[38px] bg-[#F9E8EE] px-7 pt-8 pb-6">
-          <div className="relative h-[210px] overflow-hidden md:h-[228px]">
-            <div className="absolute left-0 top-0 h-[260px] w-[calc(100%/0.76)] origin-top-left scale-[0.76] md:h-[280px] md:w-[calc(100%/0.8)] md:scale-[0.8]">
-              <CampaignAnalyticsMockup />
-            </div>
-          </div>
+        <div className="rounded-[38px] bg-[#E9F8F6] px-7 pt-8 pb-7">
+          <p className="text-[16px] font-bold text-[#0F766E]">KEP — Kayıtlı Elektronik Posta</p>
+          <h3 className="mt-5 max-w-[500px] text-[20px] font-bold leading-[1.2] tracking-[-0.03em] text-black md:text-[22px]">
+            Taahhütlü mektup hükmünde resmi dijital yazışma.
+          </h3>
+          <p className="mt-4 max-w-[500px] text-[16px] leading-[1.5] text-black/85">
+            Vergi dairesi tebligatları, SGK bildirimleri ve resmi yazışmalar için zorunlu — içerik değişikliği yapılamaz, teslim zamanı kayıt altına alınır.
+          </p>
+          <Link href="/digital-altyapi" className="mt-5 flex items-center gap-2 text-[14px] font-semibold text-[#0F766E] hover:opacity-70 transition-opacity">
+            KEP Paketlerini Gör <ChevronRight className="w-4 h-4" />
+          </Link>
         </div>
 
-        <div className="rounded-[38px] bg-[#F9E8EE] px-7 pt-8 pb-7">
-          <p className="text-[16px] font-bold text-[#A16876]">Performansı Takip Et</p>
-          <h3 className="mt-5 max-w-[620px] text-[20px] font-bold leading-[1.2] tracking-[-0.03em] text-black md:text-[24px]">
-            İşletmenizin performansını eksiksiz olarak takip edin.
+        <div className="rounded-[38px] border-2 border-[#0F766E] bg-white px-7 pt-8 pb-7">
+          <p className="text-[16px] font-bold text-[#0F766E]">Dijital Altyapı Paketi</p>
+          <h3 className="mt-5 max-w-[480px] text-[20px] font-bold leading-[1.2] tracking-[-0.03em] text-black md:text-[22px]">
+            e-İmza ve KEP birlikte — tek paket, tam dijital altyapı.
           </h3>
-          <p className="mt-5 max-w-[640px] text-[17px] leading-[1.5] text-black/85">
-            Finansal görünüm, operasyon yoğunluğu ve süreç verimliliğine ilişkin metrikleri tek panelden takip edin.
-          </p>
+          <Link href="/digital-altyapi" className="mt-5 flex items-center gap-2 text-[14px] font-semibold text-black hover:opacity-70 transition-opacity">
+            Paketi İncele <ChevronRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </div>
   );
 }
 
-function OrdersAnalyticsMockup() {
-  return (
-    <div className="h-full overflow-hidden rounded-[30px] border-2 border-[#B37A89] bg-white p-5 shadow-xl">
-      <h4 className="text-lg font-bold text-black">Orders</h4>
+function EcosystemShowcase() {
+  const partners = [
+    {
+      name: "Piri",
+      logo: "https://piri.tr/pirilogo-son.svg",
+      logoType: "img" as const,
+      href: "https://piri.tr/",
+      description: "Microsoft 365 kurulum, destek ve yönetimi. Dijital ofis altyapısının operasyonel güvencesi.",
+      badge: "Dijital Ofis",
+      color: "bg-[#F0F7FF]",
+      accent: "text-[#1b98d5]",
+    },
+    {
+      name: "BPM365",
+      logo: "",
+      logoType: "text" as const,
+      href: "https://piri.tr/urunler/is-otomasyonlari-bpm365/",
+      description: "İş süreçleri otomasyonu. Tekrarlayan operasyonları otomatikleştir, verimliliği artır.",
+      badge: "Otomasyon",
+      color: "bg-[#F5F0FF]",
+      accent: "text-[#7C3AED]",
+    },
+    {
+      name: "Rest365",
+      logo: "https://rest365.co/logo.svg",
+      logoType: "img" as const,
+      href: "https://rest365.co/",
+      description: "Restoran ve kafe yönetimi. Sipariş, masa ve mutfak süreçlerini dijitalleştir.",
+      badge: "F&B Yönetimi",
+      color: "bg-[#F0FFF4]",
+      accent: "text-[#059669]",
+    },
+    {
+      name: "E-Tuğra",
+      logo: "https://e-tugra.com.tr/wp-content/uploads/2020/08/etugra-logo-2.png",
+      logoType: "img" as const,
+      href: "https://e-tugra.com.tr/",
+      description: "e-İmza ve KEP çözümleri. Resmi belge süreçlerinde güvenli ve yasal dijital imza.",
+      badge: "e-İmza",
+      color: "bg-[#FFFBF0]",
+      accent: "text-[#D97706]",
+    },
+    {
+      name: "Kolay Startup",
+      logo: "/kolaystartup.png",
+      logoType: "img" as const,
+      href: "https://www.kolaystartup.com/",
+      description: "Girişimci desteği ve startup kaynakları. İş fikrinden kuruluşa giden yolda rehberlik.",
+      badge: "Startup",
+      color: "bg-[#FFF0F5]",
+      accent: "text-[#DB2777]",
+    },
+  ];
 
-      <div className="mt-4 flex items-center justify-between">
-        <div className="flex gap-2">
-          {["Jan 1 - Jan 31", "Platform", "Status"].map((item, index) => (
-            <div
-              key={item}
-              className={`rounded-full px-3 py-1.5 text-[8px] font-bold ${
-                index === 0 ? "bg-black text-white" : "bg-[#F2F2F2] text-black/65"
-              }`}
+  return (
+    <div className="grid grid-cols-1 gap-6 xl:grid-cols-[1fr_1fr]">
+      <div className="rounded-[38px] bg-[#E8F4FD] px-7 pt-8 pb-7">
+        <p className="text-[16px] font-bold text-[#1b98d5]">Work365 Ekosistemi</p>
+        <h3 className="mt-5 max-w-[620px] text-[20px] font-bold leading-[1.2] tracking-[-0.03em] text-black md:text-[24px]">
+          Büyümeyi destekleyen entegre iş ortağı ağı.
+        </h3>
+        <p className="mt-5 max-w-[640px] text-[17px] leading-[1.5] text-black/85">
+          Work365, güçlü iş ortakları ile entegre çalışarak şirketinizin dijital altyapısından operasyonel süreçlerine kadar tüm ihtiyaçlarını tek ekosistemde karşılar.
+        </p>
+        <div className="mt-8 grid grid-cols-3 gap-3">
+          {partners.slice(0, 3).map((p) => (
+            <a
+              key={p.name}
+              href={p.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`rounded-[20px] ${p.color} p-4 flex flex-col gap-3 hover:shadow-md transition-shadow`}
             >
-              {item}
-            </div>
+              <div className="h-8 flex items-center">
+                {p.logoType === "img" ? (
+                  <img src={p.logo} alt={p.name} className="h-7 w-auto object-contain" />
+                ) : (
+                  <span className="text-xl font-bold tracking-tighter">BPM<span className="text-[#1b98d5]">365</span></span>
+                )}
+              </div>
+              <span className={`text-[11px] font-bold ${p.accent}`}>{p.badge}</span>
+              <p className="text-[12px] leading-[1.5] text-black/70">{p.description}</p>
+            </a>
           ))}
         </div>
-        <div className="rounded-full bg-black px-3 py-1.5 text-[8px] font-bold text-white">Export</div>
       </div>
 
-      <div className="mt-4 grid grid-cols-4 gap-3">
-        {[
-          ["Toplam Sipariş", "786", "-1%"],
-          ["Toplam Satış", "20.786 ₺", "+3%"],
-          ["Ortalama Sepet", "73 ₺", "+13%"],
-          ["İade Oranı", "12%", "-13%"],
-        ].map(([label, value, delta]) => (
-          <div key={label} className="rounded-[18px] bg-[#F7F8FB] p-3">
-            <p className="text-[8px] font-semibold text-black/65">{label}</p>
-            <div className="mt-1 flex items-baseline gap-1">
-              <p className="text-sm font-bold text-black">{value}</p>
-              <span className={`text-[8px] font-bold ${delta.startsWith("+") ? "text-[#16A34A]" : "text-[#DC2626]"}`}>{delta}</span>
-            </div>
-            <div className="mt-3 flex h-10 items-end gap-1">
-              {[42, 68, 55, 18, 24, 46, 40, 60].map((height, index) => (
-                <div
-                  key={index}
-                  className="flex-1 rounded-t-full bg-[linear-gradient(180deg,#AFCBFF_0%,#2F73FF_100%)]"
-                  style={{ height: `${height}%` }}
-                />
-              ))}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-4 space-y-2">
-        {[
-          ["#25848", "Ergonomic Office Chair - Grey", "4.858 ₺", "Ödendi"],
-          ["#24147", "Ergonomic Office Chair - Blue", "2.920 ₺", "İade"],
-          ["#12838", "14K Solid Sideways Necklace", "516 ₺", "Ödendi"],
-        ].map(([id, title, total, status]) => (
-          <div key={id} className="grid grid-cols-[0.7fr_2.2fr_1fr_0.8fr] items-center rounded-[16px] bg-[#FBFBFC] px-4 py-3">
-            <span className="text-[8px] font-bold text-black/45">{id}</span>
-            <div>
-              <p className="text-[9px] font-semibold text-black">{title}</p>
-              <p className="text-[8px] text-black/45">Sipariş kaydı</p>
-            </div>
-            <span className="text-[9px] font-bold text-black">{total}</span>
-            <span className={`inline-flex justify-center rounded-full px-2 py-1 text-[8px] font-bold ${status === "Ödendi" ? "bg-[#DCFCE7] text-[#15803D]" : "bg-[#F3F4F6] text-[#6B7280]"}`}>
-              {status}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function CampaignAnalyticsMockup() {
-  return (
-    <div className="h-full overflow-hidden rounded-[28px] border-2 border-[#B37A89] bg-white p-4 shadow-xl">
-      <div className="flex gap-2">
-        {["Dec 1, 2024 - Jun 1, 2025", "Google Ads", "Meta Ads", "TikTok Ads"].map((item, index) => (
-          <div
-            key={item}
-            className={`rounded-full px-3 py-1.5 text-[8px] font-bold ${index === 0 ? "bg-black text-white" : "bg-[#F2F2F2] text-black/65"}`}
-          >
-            {item}
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-4 grid grid-cols-[1.55fr_0.78fr_0.78fr] gap-3">
-        <div className="rounded-[16px] bg-[#F7F8FB] p-3">
-          <div className="flex items-end justify-between">
-            <div>
-              <p className="text-[8px] font-semibold text-black/65">Toplam Harcama</p>
-              <p className="mt-1 text-sm font-bold text-black">11.212 ₺</p>
-            </div>
-            <span className="text-[8px] text-black/35">1.000</span>
-          </div>
-          <div className="mt-3 flex h-16 items-end gap-1">
-            {[10, 24, 18, 44, 26, 48, 40, 22, 16, 28, 44, 30, 52, 40, 36, 44, 50, 22, 34, 28, 36].map((height, index) => (
-              <div key={index} className="flex-1 rounded-t-full bg-[#D7E6FF]" style={{ height: `${height}%` }} />
-            ))}
-          </div>
+      <div className="flex flex-col gap-6">
+        <div className="grid grid-cols-2 gap-6 flex-1">
+          {partners.slice(3).map((p) => (
+            <a
+              key={p.name}
+              href={p.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`rounded-[38px] ${p.color} px-7 pt-8 pb-7 flex flex-col gap-3 hover:shadow-md transition-shadow`}
+            >
+              <div className="h-8 flex items-center">
+                <img src={p.logo} alt={p.name} className="h-7 w-auto object-contain" />
+              </div>
+              <span className={`text-[13px] font-bold ${p.accent}`}>{p.badge}</span>
+              <h3 className="text-[18px] font-bold leading-[1.2] tracking-[-0.03em] text-black">{p.name}</h3>
+              <p className="text-[13px] leading-[1.5] text-black/70">{p.description}</p>
+            </a>
+          ))}
         </div>
-
-        {[
-          ["Toplam Satış", "27.917 ₺"],
-          ["ROAS", "2.49"],
-        ].map(([label, value]) => (
-          <div key={label} className="rounded-[16px] bg-[#F7F8FB] p-3">
-            <p className="text-[8px] font-semibold text-black/65">{label}</p>
-            <p className="mt-1 text-sm font-bold text-black">{value}</p>
-            <div className="mt-4 flex h-14 items-end">
-              <svg viewBox="0 0 100 50" className="h-full w-full">
-                <path d="M0 28 L20 10 L40 16 L60 44 L80 40 L100 18" fill="none" stroke="#2F73FF" strokeWidth="2.5" />
-              </svg>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-3 grid grid-cols-4 gap-3">
-        {[
-          ["Gösterim", "199.122"],
-          ["Tıklama", "10.524"],
-          ["TBM", "1.06 ₺"],
-          ["CTR", "%5.28"],
-        ].map(([label, value], index) => (
-          <div key={label} className="rounded-[16px] bg-[#F7F8FB] p-3">
-            <p className="text-[8px] font-semibold text-black/65">{label}</p>
-            <p className="mt-1 text-sm font-bold text-black">{value}</p>
-            <div className="mt-3 flex h-12 items-end">
-              <svg viewBox="0 0 100 50" className="h-full w-full">
-                <path
-                  d={index === 0 ? "M0 24 L20 16 L40 18 L60 12 L80 8 L100 8" : index === 1 ? "M0 32 L20 8 L40 14 L60 46 L80 40 L100 12" : index === 2 ? "M0 24 L20 8 L40 14 L60 46 L80 40 L100 14" : "M0 18 L20 16 L40 18 L60 12 L80 8 L100 8"}
-                  fill="none"
-                  stroke="#2F73FF"
-                  strokeWidth="2.5"
-                />
-              </svg>
-            </div>
-          </div>
-        ))}
+        <div className="rounded-[38px] bg-[#E8F4FD] px-7 py-7">
+          <p className="text-[16px] font-bold text-[#1b98d5]">Entegre Çalışıyor</p>
+          <h3 className="mt-4 text-[18px] font-bold leading-[1.2] tracking-[-0.03em] text-black md:text-[21px]">
+            Tüm araçlar Work365 panelinizle senkronize çalışır.
+          </h3>
+          <Link href="/ekosistem" className="mt-4 flex items-center gap-2 text-[14px] font-semibold text-[#1b98d5] hover:opacity-70 transition-opacity">
+            Ekosistemi Keşfet <ChevronRight className="w-4 h-4" />
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -652,80 +571,39 @@ function DigitalInfrastructureMockup() {
   );
 }
 
-function PackageAnalyticsMockup() {
+function EcosystemMockup() {
   return (
-    <div className="absolute inset-0 overflow-hidden rounded-tl-2xl rounded-bl-2xl border border-[#E9D3DA] bg-white p-4 shadow-2xl">
-      <div className="flex h-full flex-col rounded-[22px] bg-[#FCF7F9] p-4">
+    <div className="absolute inset-0 overflow-hidden rounded-tl-2xl rounded-bl-2xl border border-[#D0E8F8] bg-white p-4 shadow-2xl">
+      <div className="flex h-full flex-col rounded-[22px] bg-[#F0F7FD] p-4">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#D84C6F]">
-              Analiz Paneli
+            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#1b98d5]">
+              Ekosistem
             </p>
-            <p className="mt-1 text-sm font-bold text-black">Genel Performans</p>
+            <p className="mt-1 text-sm font-bold text-black">İş Ortakları</p>
           </div>
-          <div className="rounded-full bg-[#FCE7EE] px-3 py-1 text-[10px] font-bold text-[#D84C6F]">
-            Canli
+          <div className="rounded-full bg-[#E8F4FD] px-3 py-1 text-[10px] font-bold text-[#1b98d5]">
+            5 Ortak
           </div>
         </div>
 
-        <div className="mt-4 grid flex-1 grid-cols-[1.2fr_0.8fr] gap-3">
-          <div className="rounded-[18px] bg-white p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-[10px] font-semibold text-black/55">Aylik Gorunum</p>
-                <p className="mt-1 text-sm font-bold text-black">Gelir ve Islem Akisi</p>
-              </div>
-              <span className="text-[9px] font-bold text-[#16A34A]">+18.2%</span>
+        <div className="mt-4 grid flex-1 grid-cols-2 gap-2">
+          {[
+            { name: "Piri", badge: "Dijital Ofis", color: "bg-[#F0F7FF]" },
+            { name: "BPM365", badge: "Otomasyon", color: "bg-[#F5F0FF]" },
+            { name: "Rest365", badge: "F&B", color: "bg-[#F0FFF4]" },
+            { name: "E-Tuğra", badge: "e-İmza", color: "bg-[#FFFBF0]" },
+          ].map((p) => (
+            <div key={p.name} className={`${p.color} rounded-[16px] p-3 flex flex-col justify-between`}>
+              <p className="text-[9px] font-bold text-black/40">{p.badge}</p>
+              <p className="text-sm font-bold text-black">{p.name}</p>
             </div>
+          ))}
+        </div>
 
-            <div className="mt-4 flex h-20 items-end gap-1.5">
-              {[30, 54, 42, 68, 74, 52, 80, 58, 86, 64, 76, 92].map((height, index) => (
-                <div
-                  key={index}
-                  className="flex-1 rounded-t-full bg-[linear-gradient(180deg,#F7B6C6_0%,#D84C6F_100%)]"
-                  style={{ height: `${height}%` }}
-                />
-              ))}
-            </div>
-
-            <div className="mt-4 grid grid-cols-3 gap-2">
-              {[
-                ["Gelir", "248.000 ₺"],
-                ["Gider", "83.400 ₺"],
-                ["Verim", "%72"],
-              ].map(([label, value]) => (
-                <div key={label} className="rounded-xl bg-[#FCF7F9] px-3 py-2">
-                  <p className="text-[8px] font-semibold text-black/45">{label}</p>
-                  <p className="mt-1 text-[10px] font-bold text-black">{value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div className="rounded-[18px] bg-white p-4">
-              <p className="text-[10px] font-semibold text-black/55">Kritik Metrikler</p>
-              <div className="mt-3 space-y-2">
-                {[
-                  ["Aktif Surec", "24"],
-                  ["Bekleyen Gorev", "8"],
-                  ["Tamamlanan", "126"],
-                ].map(([label, value]) => (
-                  <div key={label} className="flex items-center justify-between rounded-xl bg-[#FCF7F9] px-3 py-2">
-                    <span className="text-[9px] font-medium text-black/65">{label}</span>
-                    <span className="text-[10px] font-bold text-black">{value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="rounded-[18px] bg-[#FCE7EE] p-4">
-              <p className="text-[10px] font-bold text-[#D84C6F]">Ozet</p>
-              <p className="mt-2 text-[10px] leading-[1.5] text-black/70">
-                Gelir, operasyon ve surec verilerini tek ekranda izleyin.
-              </p>
-            </div>
-          </div>
+        <div className="mt-3 rounded-[16px] bg-white px-3 py-2">
+          <p className="text-[9px] font-semibold text-black/55">+ Kolay Startup</p>
+          <p className="text-[10px] font-bold text-black">Startup Desteği</p>
         </div>
       </div>
     </div>
@@ -905,75 +783,3 @@ function BookkeepingMockup({
   );
 }
 
-function TaxesMockup({
-  isHorizontal,
-  alignBottom = false,
-}: {
-  isHorizontal: boolean;
-  alignBottom?: boolean;
-}) {
-  return (
-    <div
-      className={`${alignBottom ? "absolute bottom-[-26px] left-5 w-[74%] md:w-[76%]" : "absolute inset-0"} overflow-hidden border border-[#A7DDB5] bg-[#EAF9EE] shadow-2xl ${
-        isHorizontal ? "rounded-tl-2xl rounded-bl-2xl p-4" : "rounded-t-3xl p-4"
-      }`}
-    >
-      <div className="flex h-full flex-col rounded-[24px] border border-[#BDE8C7] bg-white/92">
-        <div className="flex items-center justify-between border-b border-[#E7F6EB] px-4 py-3">
-          <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#15803D]">
-              Vergi Paneli
-            </p>
-            <p className="mt-1 text-xs font-bold text-black">Beyan ve Evrak Takibi</p>
-          </div>
-          <div className="rounded-full bg-[#DCF8E4] px-3 py-1 text-[10px] font-bold text-[#15803D]">
-            Hazır
-          </div>
-        </div>
-
-        <div className="grid flex-1 gap-3 p-4">
-          <div className="grid grid-cols-[1.4fr_0.9fr] gap-3">
-            <div className="rounded-[20px] bg-[#F7FBF8] p-3">
-              <p className="text-[10px] font-semibold text-[#7B8087]">Yaklaşan Beyan</p>
-              <p className="mt-1 text-sm font-bold text-black">KDV Beyannamesi</p>
-              <p className="mt-2 text-[10px] font-bold text-[#15803D]">Son gün: 26 Mart</p>
-            </div>
-            <div className="rounded-[20px] bg-[#DCF8E4] p-3">
-              <p className="text-[10px] font-semibold text-[#15803D]">Bu Ay</p>
-              <p className="mt-1 text-sm font-bold text-black">4 görev</p>
-            </div>
-          </div>
-
-          <div className="rounded-[22px] bg-[#F7FBF8] p-4">
-            <div className="mb-3 flex items-center justify-between">
-              <p className="text-[11px] font-bold text-[#15803D]">Evrak Durumu</p>
-              <p className="text-[10px] font-semibold text-[#7B8087]">Güncel</p>
-            </div>
-            <div className="space-y-2">
-              {[
-                ["KDV Evrakları", "Tamamlandı"],
-                ["Muhtasar Kontrolü", "İnceleniyor"],
-                ["Geçici Vergi Dosyası", "Hazırlanıyor"],
-              ].map(([title, status]) => (
-                <div key={title} className="flex items-center justify-between rounded-2xl bg-white px-3 py-2.5">
-                  <span className="text-[11px] font-semibold text-black">{title}</span>
-                  <span className="text-[10px] font-bold text-[#15803D]">{status}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="rounded-[20px] bg-white px-3 py-3">
-            <div className="mb-2 flex items-center justify-between">
-              <span className="text-[10px] font-bold text-[#15803D]">Uzman Desteği</span>
-              <span className="text-[10px] font-semibold text-[#7B8087]">Aktif</span>
-            </div>
-            <p className="text-[10px] leading-relaxed text-[#5F6368]">
-              Tüm vergi beyanlarınız, son tarih uyarıları ve evrak kontrolleri tek akışta yönetiliyor.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
